@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>美食</title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+			font-family: "微软雅黑"；
+		}
+		input{
+			outline-style: none;
+		}
+		a{
+		text-decoration: none;
+		color: black;
+		}
+		ul{
+			list-style-type: none;
+		}
+		li{
+			display: inline-block;
+		}
+		/*主体框架*/
+		.top{
+			width: 100%;
+			height: 60px;
+			border-top: 5px solid  black;
+			position: fixed;
+		}
+		.logo{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			margin-left: 100px;
+			float: left;
+		}
+		.logo>img{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			float: left;
+		}
+		.find{
+			width: 550px;
+			height: 45px;
+			display: inline-block;
+			float: left;
+			margin-left: 120px;
+			margin-top: 8px;
+		}
+		.find input{
+			width: 550px;
+			height: 45px;
+			text-align: center;
+			font-size: 14.78px;
+			color: #d6d6d6;
+			border:2px solid rgb(50,50,50);
+			border-radius: 15px;
+		}
+		.fimg{
+			width: 60px;
+			height: 40px;
+			margin-left: -60px;
+			margin-top: 8px;
+			display: inline-block;
+		}
+		.fimg input{
+			width: 60px;
+			height: 38px;
+			margin-top: 3px;
+			background-image: url(img/search.png);
+			background-color: #ffffff;
+			background-repeat: no-repeat;
+			background-position:center;
+			border: none;
+			border-radius: 10px;
+		}
+		.topright{
+			width: 360px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			margin-right: 30px;
+			margin-top: 5px;
+			float: right;
+		}
+		.tr1{
+			width: 90px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr1:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr2{
+			width: 72px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr2:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr1>a>img{
+			margin-top: 10px;
+			height: 25px;
+			width: 25px;
+			float: left;
+		}
+		.backpage{
+			width: 100%;
+			height: 1200px;
+		}
+		.main{
+			height: 700px;
+			margin: 0px auto;
+		}
+		.k{
+			height: 66px;
+		}
+		#scroll{
+			margin-left: 200px;
+			height: 30px;
+			/*width: 1250px;*/
+			position: fixed;
+		}
+		#pra{
+			color: rgb(194,204,216);
+			width: 1000px;
+			overflow: hidden;
+			float: left;
+			margin-top: 15px;
+		}
+		#mouse{
+			width: 40px;
+			height: 40px;
+			float: left;
+		}
+		#time{
+			float: right;
+			margin-left: 100px;
+			border: 2px solid black;
+			border-radius: 10px;
+		}
+		#time>img{
+			width: 46px;
+			height: 46px;
+		}
+		#tim{
+			float: right;
+			font-size: 20px;
+			margin-top: 10px;
+		}
+		.left{
+			top: 120px;
+			border-radius: 10px;
+			display: inline-block;
+			position: fixed;
+			z-index: 2;
+		}
+		.nav{
+			height: 55px;
+			width: 150px;
+			margin:5px;
+			text-align: center;
+			line-height: 55px;
+			font-size: 20px;
+			background: rgba(50,50,50,0.8);
+			border-radius: 10px;
+			cursor: pointer;
+			overflow: hidden;
+		}
+		#nav{
+			margin-left: -120px;
+		}
+		#nav2{
+			margin-left: -120px;
+		}
+		#nav3{
+			margin-left: -120px;
+		}
+		#nav4{
+			margin-left: -120px;
+		}
+		#nav5{
+			margin-left: -120px;
+		}
+		#nav6{
+			margin-left: -120px;
+		}
+		.nav>a{
+		color: #ffffff;
+		}
+		#nav1{
+			margin-left: -20px;
+ 			border-radius: 10px;
+ 		}
+		/*分组实现*/
+		/*首页 by 田文秀*/
+
+/*--------------------------------------------------------------*/
+		/*美食部分*/
+		.main2{
+			border-color: green white white white;
+			border-style: solid;
+			width:1350px;
+			height:550px;
+			position:fixed;
+			top: 140px;
+			left:150px ;
+			background-color: #FFDCB9;
+			background-size: 100%;
+			overflow-y: hidden;
+		}
+		
+		.main3{
+			border-color: black;
+			border-style: solid;
+			width: 400px;
+			height:45px;
+			position: fixed;
+			bottom:0px;
+			left:580px;
+			text-align: center;
+			line-height: 45px;
+			background-color:	#7FFFD4;
+			border-radius:45%;
+		}
+
+		.main3 p{
+			font-size: 45px;
+		}
+
+		.img1{
+			width:320px;
+			height:220px;
+		}
+
+		.p1{
+			position:absolute;
+			top:0px;
+			right:0px;
+			border-style: solid;
+			border-color: black;
+			height:0;
+			width:0;
+			display:none;
+			word-break: break-all;
+			font-size: 18px;
+		}
+		
+		#ps{
+			position: fixed;
+			top: 200px;
+		}
+		#ps li{
+			width: 320px;
+			height:220px;
+			box-shadow: 0 0 10px #000;
+			position: absolute;
+			transition: all 1s;			
+		}
+
+        #ps li.current{
+            left: 700px !important;
+            top: 200px !important;
+            transform: rotate(0deg) translate(-50%, -50%) !important;
+            z-index:99;
+            width: 750px;
+            height: 400px;
+            background-color:red;
+        }
+        #ps li.current img{
+        	width: 550px;
+        	height:400px;
+        	margin-top:0px;
+        	margin-left:0px;
+        }
+
+        .img2{
+        	position: absolute;
+        	right: 0px;
+        	display: block;
+
+        }
+
+        .img3{
+        	position: absolute;
+        	left: 0px;
+        	display: block;
+        	width: 400px;
+        	height: 550px;
+        }
+
+        .main4{
+        	border-color: none;
+        	border-style: solid;
+        	height: 430px;
+        	width: 700px;
+        	display: none;
+        	position: absolute;
+        	left: 150px;
+        	top: 80px;
+        }
+        .main5{
+        	border-color:none;
+        	border-style: solid;
+        	height:430px;
+        	width:360px;
+        	position: relative;
+        	overflow: hidden;
+        }
+        .main6{
+        	border-color:none;
+        	border-style: solid;
+        	height: 427px;
+        	width: 332px;
+			position:absolute;
+			top: 0px;
+			right:0px;
+        }
+
+        #slider{
+			width:2920px;
+			height: 430px;
+			border-color:none;
+			border-style: solid;
+			position:absolute;
+			left:-370px;
+        }
+		
+		.slide{
+			width:360px;
+			height:430px;
+			border-style: solid;
+			float: left;
+			overflow:hidden;
+			position: relative;
+		}
+        .img4{
+        	width: 360px;
+        	height:330px;
+        	margin-bottom: 0px;
+        }
+        .img5{
+        	margin-top:0px;
+        	width:100px;
+        	height:100px;
+        	position:relative;
+        	bottom:15px;
+        	left:-129px;
+        	margin-top:0px;       	
+        }
+        .p4{
+        	border-color: blue;
+        	border-style: solid;
+        	position:absolute;
+        	right: 0px;
+        	bottom:0px;
+        	width: 255px;
+        	height:96px;
+        	font-size:5px;
+        }
+//-------------------------------------------------------------------------
+	</style>
+</head>
+<!-- 主题架构 -->
+<body>
+	<div class="top" id="top" >
+		<div class="logo" id="logo">
+			<a href="web_homework.html"><img src="img/logo3.png" style="height: 60px;"></a>
+		</div>
+		<form>
+			<div class="find" id="find"><input type="text" name="find" value="发现新世界"></div>
+		    <div class="fimg" id="fimg"> <input type="submit" name="fimg" value="&nbsp"></div>
+		<div class="topright" id="toprigh">
+			<div class="tr1" id="tr1"><a href="web_homework.html"><img src="img/home.png">主&nbsp&nbsp页</a></div>
+			<div class="tr1" id="tr1"><a href="#"><img src="img/find.png">发&nbsp&nbsp现</a></div>
+			<div class="tr2" id="tr2"><a href="page/register.html" target="_blank">登&nbsp&nbsp录&nbsp&nbsp&nbsp</a>|</div>
+			<div class="tr1" id="tr1"><a href="#">注&nbsp&nbsp册</a></div>
+		</div>
+		</form>
+	</div>
+	<div class="k" id="k"></div>
+	<div class="backpage" id="backpage">
+		<div id="scroll">
+			<img src="img/s1.gif" id="mouse">
+			<div id = "pra">
+				<marquee behavior = "scroll" direction = "left" id ="marquee"></marquee>
+			</div>
+			<div id="time">
+				<img src="img/s2.gif">
+				<div id="tim">
+					<p id="paragraph"></p>
+				</div>
+			</div>
+		</div>
+		<div class="main" id="main">
+			<div class="left" id="left">
+				<div class="nav" id="nav1"><a  href="web_homework.html">首&nbsp&nbsp&nbsp页</a></div>
+				<div class="nav" id="nav2" ><a href="#">美&nbsp&nbsp&nbsp食</a></div>
+				<div class="nav" id="nav3"><a href="#">汽&nbsp&nbsp&nbsp车</a></div>
+				<div class="nav" id="nav4" ><a href="#">美&nbsp&nbsp&nbsp妆</a></div>
+				<div class="nav" id="nav5"><a href="#">游&nbsp&nbsp&nbsp戏</a></div>
+				<div class="nav" id="nav6"><a href="#">计&nbsp算&nbsp机</a></div>
+			</div>
+<!-- //--------------------------------------------------------------------------
+//美食部分  by杨宏博 -->
+		<div class="main2">
+			<img class="img2" src="meishi/13.jpg">
+			<img class="img3" src="meishi/14.jpg">
+			<ul id="ps">
+				<li><img class="img1" src="meishi/1.jpg"/><p class='p1' style="background-color: #FF5809">怎么喝红酒对身体最好:<br/>1、注意酒量:红酒时养生佳品，平日里适量喝并不会伤害身体，相反能够保养身体，让你保持年轻。<br/>2、注意方式:喝酒是有讲究的，错误的方式会让身体健康受损。<br/>3、注意时间:比如说在晚上七至九点半之间是最适合的，因为这段时间里人体肝脏能够更好地发挥功能，能够更容易代谢酒精。</p></li>
+				<li><img class="img1" src="meishi/2.jpg"/><p class='p1' style="background-color: #C2FF68">烤鸭是北京名食，它以色泽红艳，肉质细嫩，味道醇厚，肥而不腻的特色，被誉为“天下美味”而驰名中外。<br/>烤鸭历史悠久，起源于中国南北朝时期，当时《食珍录》中已记有炙鸭。朱元璋建都应天（南京）后，明宫御厨便取用南京肥厚多肉的湖鸭制作菜肴。为了增加鸭菜的风味，厨师采用炭火烘烤，成菜后鸭子吃口酥香，肥而不腻，受到人们称赞，即被宫廷取名为烤鸭。</p></li>
+				<li><img class="img1" src="meishi/3.jpg"/><p class='p1' style="background-color: #5CADAD">口水鸡属于川菜系中的凉菜，佐料丰富，集麻辣鲜香嫩爽于一身。煮鸡用的汤料很有讲究，需要恰到好处，这样可以最大限度地保存鸡的可溶性蛋白，增加鸡肉的鲜美程度，又能具备其特有的香型和滋味。<br/>“口水鸡”这名字初听感觉有点不雅，脑子里可能会出现一副口水滴哒的样子，之所以叫口水鸡还因为有很多花椒，吃了会麻到嘴巴瘫痪不由自主流口水。</p></li>
+				<li><img class="img1" src="meishi/4.jpg"/><p class='p1' style="background-color: #FF9D6F">俗话讲：“美食要配美器，药疗不如食疗”，羊肉性温热、补气滋阴、暖中补虚、开胃健力，在《本草纲目》被称为补元阳益血气的温热补品。温热对人体而言就是温补，比如冬季老年人比较怕冷，适时的吃些羊肉就会感到暖和，这一点在张琼之的《伤寒论》里及唐朝的《千金书》中都有记载，可见羊肉是人们冬令进补的最佳食品。</p></li>
+				<li><img class="img1" src="meishi/5.jpg"/><p class='p1' style="font-size: 16px;background-color:#9999CC ">糖能益脾胃、养肌肤。酸者入肝胆，养筋益韧带。糖有润肺生津、滋阴、调味、除口臭、解盐卤毒、舒缓肝气等功效。适当食用还有助于提高机体对钙的吸收。而猪排骨除含蛋白、脂肪、维生素外，还含有大量磷酸钙、骨胶原、骨粘蛋白等营养物质。排骨炖煮后，其可溶性的钙、磷、钠、钾等，大部分溢入汤中。钙、镁在酸性条件下易被解析，遇醋酸后产生醋酸钙，可以更好地被人体吸收利用，因而糖醋排骨可以提高煮排骨的营养吸收率，非常适合给老人孩子补钙。</p></li>
+				<li><img class="img1" src="meishi/6.jpg"/><p class='p1' style="font-size:16px;background-color:#9393FF ">腊汁肉夹馍选用猪硬肋条肉，加以多种中草药，投入滋味浓郁的老汤，文火慢炖而成。风味特别，久贮不腐，瘦不留渣，肥不腻口。白吉馍，这种馍在许多地方叫烧饼，不是蒸熟而是烙熟的。可西安人就说是馍，而不说是烧饼。西安的这种白吉馍是用一种传统的三扇鏊，烧木炭火，慢慢烤烙而成。其特点一是白，二是外形规矩奇特，叫做“铁圈边，菊花心”，三是皮酥里嫩，中心空虚，便于夹肉，四是吃口香甜。因为中心空虚，西安人又叫它两张皮，还叫白吉子。</p></li>
+				<li><img class="img1" src="meishi/7.jpg"/><p class='p1' style="background-color: #F9F900">松鼠鱼是江苏省传统名菜之一，属苏菜，松鼠鱼因形似而得名，通常以黄鱼、鲤鱼、鳜鱼等鱼类为原料，将鱼去鳞、鳃、内脏，用清水洗净。以胸腹鳍处下刀，将鱼头切下，然后再从下颌处下刀，将鱼头劈半刀，用刀略拍，剔下两面鱼肉，除净胸部细刺，鱼尾相连入油锅炸到金黄色，再浇上酱汁拼盘而成的美食。色泽鲜艳，鲜嫩酥香，酸甜适口。</p></li>
+				<li><img class="img1" src="meishi/8.jpg"/><p class='p1' style="font-size:15px;background-color: #ffa6ff">日本寿司分两大派别：一、江户派，握寿司；二、关西派，箱寿司（大阪的最有名），相比之下，握寿司更让大家喜爱。由于不使用任何模具，全靠寿司师傅手工握制而成，这样不仅可以保证米的颗粒圆润，同时有效的保持米的醇香。<br/>其中，“握寿司”，在整个料理领域里，应该可以算是非常独特的一门。最主流、也最讲究的，当属“握寿司”。不同的鱼材，刀法、厚薄、甚至调味、做法便有不同。就像品酒顺序必定是由香槟、白酒、到红酒、甜酒或烈酒一样，吃寿司在先后顺序上也有讲究。</p></li>
+				<li><img class="img1" src="meishi/9.jpg"/><p class='p1' style="font-size:17px;background-color: #FF8000">★上等的匹萨必须具备四个特质：新鲜饼皮、上等芝士、奶酪、顶级匹萨酱和新鲜的馅料。<br/>★饼底一定要现做，面粉一般选用指定品牌，春冬两季用甲级小麦研磨而成的饼底会外层香脆、内层松软。<br/>★纯正乳酪是匹萨的灵魂，正宗的匹萨一般都选用富含蛋白质、维生素、矿物质和钙质及低卡路里的进口芝士。<br/>★匹萨酱须由鲜美番茄混合纯天然香料秘制而成，具有风味浓郁的特点。</p></li>
+				<li><img class="img1" src="meishi/10.jpg"/><p class='p1' style="font-size:18px;background-color: #D9FFFF">很多专家认为，汉堡是健康的食品。汉堡食用方便、风味可口、营养全面，现在已经成为畅销世界的方便主食之一。方敏琪表示，汉堡包也并不是有害的食品。汉堡包之中的面包能提供一定的碳水化合物，汉堡包可以提供足够的蛋白质、脂肪及铁质，洋葱和生菜能提供小量纤维。她建议若可额外加些蔬果补充纤维，其实算得上营养均衡，不应该认为汉堡包是有害的食品。</p></li>
+				<li><img class="img1" src="meishi/11.jpg"/><p class='p1' style="font-size: 16px;background-color: #A6FFA6">粤菜用量精而细，配料多而巧，装饰美而艳，而且善于在模仿中创新，品种繁多，1965年“广州名菜美点展览会”介绍的就有5457种之多。粤菜注重质和味，口味比较清淡，力求清中鲜、淡中求美。而且随季节时令的变化而变化，夏秋偏重清淡，冬春偏重浓郁，追求色、香、味、型。<br/>粤菜用料十分广泛，不仅主料丰富，而且配料和调料亦十分丰富。为了显出主料的风味，粤菜选择配料和调料十分讲究，配料不会杂，调料是为调出主料的原味，两者均以清新为本。</p></li>
+				<li><img class="img1" src="meishi/12.jpg"/><p class='p1' style="background-color:#F75000 ">这是一道大菜，适合人多或高档正式宴请，地位相当于燕窝鱼翅，做主菜绝对够格。若人较少也可以点“份餐”，虽然没有“全猪”气派，品尝风味是没有问题的。正因为是大菜，一般的饭馆没有，要到比较“正宗”的大粤菜馆才能吃到，大多数情况下要事先预订，并且对价格要有心理准备。</p></li>
+
+			</ul>
+			<div class="main3" onmouseover="bigger()"  onmouseout="smaller()">
+				<p>最 新 动 态</p>
+				<div class="main4">
+					<div class="main5">
+						<div id="slider">
+							<div class="slide"><img class="img4" src="meishi/p6.jpg"><img class="img5" src="meishi/t6.jpg"><p class="p4">刘xx:富有的早餐！</p></div>
+							<div class="slide"><img class="img4" src="meishi/p1.jpg"><img class="img5" src="meishi/t1.jpg"><p class="p4" style="font-size:30px;">刘xx:富有的早餐！</p></div>
+							<div class="slide"><img class="img4" src="meishi/p2.jpg"><img class="img5" src="meishi/t2.jpg"><p class="p4" style="font-size:30px;">崔XX:就这？</p></div>
+						<div class="slide"><img class="img4" src="meishi/p4.jpg"><img class="img5" src="meishi/t3.jpg"><p class="p4" style="font-size:30px;">杨XX:失恋了.....</p></div>
+						<div class="slide"><img class="img4" src="meishi/p3.jpg"><img class="img5" src="meishi/t4.jpg"><p class="p4" style="font-size:30px;">程xx:美好的一天！</p></div>
+						<div class="slide"><img class="img4" src="meishi/p5.jpg"><img class="img5" src="meishi/t5.jpg"><p class="p4" style="font-size:30px;">田xx:没有女生会拒绝甜品！</p></div>
+						<div class="slide"><img class="img4" src="meishi/p6.jpg"><img class="img5" src="meishi/t6.jpg"><p class="p4" style="font-size:30px;">周xx:今天又是健身房的一天！</p></div>
+						<div class="slide"><img class="img4" src="meishi/p1.jpg"><img class="img5" src="meishi/t1.jpg"></div>
+					</div>
+					</div>
+					<div class="main6">
+						<p style="font-size:30px;text-shadow: 0 0 2px black;color:#5CADAD;"
+						>发布动态</p>
+						<textarea row="60" cols="40" style="height:340px"></textarea>
+						<button type="button" style="width:302px;height:40px;position:absolute;right:15px;bottom:0px" onclick="fabu()">发布</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+		</div>
+		</div>
+	</div>
+<!-- //----------------------------------------------------------------------- -->
+	<!-- 分组实现 -->
+	<!-- 首页 by 田文秀 -->
+	<script src="meishi/Underscore-min.js"></script>
+	<script type="text/javascript">
+		// 主体框架
+		function getStyle(obj,style) {  
+	    	if(obj.currentStyle){  
+	    		return obj.currentStyle[style];  
+	    	} 
+	    	else 
+	    	{  
+	    		return getComputedStyle(obj)[style];
+	    	}  
+	    }
+		var input = document.getElementsByTagName('input')[0];
+		var left = document.getElementById('left');
+		var nav2 = document.getElementById('nav2');
+		var nav3 = document.getElementById('nav3');
+		var nav4 = document.getElementById('nav4');
+		var nav5 = document.getElementById('nav5');
+		var nav6 = document.getElementById('nav6');
+		var marquee = document.getElementById('marquee');
+		var paragraph = document.getElementById('paragraph');
+		var now = new Date();
+		var day = 32;
+		input.onclick = function () {
+			input.value = " ";
+		}
+		input.onblur = function(){
+			input.value = "发现新世界";
+		}
+		nav2.onmouseout = function(){
+			nav2.style.marginLeft= '-120px';
+		}
+		nav2.onmouseover = function(){
+			nav2.style.marginLeft = '-20px';
+		}
+		nav3.onmouseout = function(){
+			nav3.style.marginLeft = '-120px';
+		}
+		nav3.onmouseover = function(){
+			nav3.style.marginLeft = '-20px';
+		}
+		nav4.onmouseout = function(){
+			nav4.style.marginLeft= '-120px';
+		}
+		nav4.onmouseover = function(){
+			nav4.style.marginLeft = '-20px';
+		}
+		nav5.onmouseout = function(){
+			nav5.style.marginLeft = '-120px';
+		}
+		nav5.onmouseover = function(){
+			nav5.style.marginLeft = '-20px';
+		}
+		nav6.onmouseout = function(){
+			nav6.style.marginLeft= '-120px';
+		}
+		nav6.onmouseover = function(){
+			nav6.style.marginLeft = '-20px';
+		}
+		function getTime(){
+			var date = new Date();
+			var hour = date.getHours();
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+			var hour1 = hour<10?'0' + hour :hour;
+			var minute1 = minute<10?'0' + minute :minute;
+			var second1 = second<10?'0' + second :second;
+			paragraph.innerHTML = hour1 + "：" + minute1 + "："+ second1;
+		}
+
+		getTime();
+		setInterval(getTime,1000);
+		function scroll(){
+			var date1 = new Date();
+			var year = date1.getFullYear();
+			if(year == 2019){
+				marquee.innerHTML = "距 离 2020 年 仅 剩 " + (day-now.getDate()) + " 天 ! ! ! ";
+			}
+			else{
+				marquee.innerHTML = "今 天 也 是 活 力 满 满 的 一 天 ！ 加 油 ！ 奥 利 给 ！";
+			}
+		}
+		scroll();
+
+		//美食部分：
+		var allLists=ps.children;
+
+		var screenW=document.documentElement.clientWidth-500;
+		var screenH=document.documentElement.clientHeight-460;
+
+		//遍历
+		for(var j=0;j<allLists.length;j++){
+			//取出单个li标签
+			var li=allLists[j];
+
+			//随机分布
+			li.style.left=450+"px";
+			li.style.top=100+"px";
+
+			//随机角度
+			 li.style.transform='rotate(' + _.random(0, 360) +'deg)';
+
+			//点击事件
+			li.onclick=function(){
+				for(var i=0;i<allLists.length;i++){
+					allLists[i].className=" ";
+				}
+				this.className="current";
+
+				for(var i=0;i<12;i++){
+					var p1=document.getElementsByClassName("p1")[i];
+					p1.style.height=0+"px";
+					p1.style.width=0+"px";
+					p1.style.display="none";
+				}
+				this.lastChild.style.height=400+"px";
+				this.lastChild.style.width=195+"px";
+				this.lastChild.style.display="block";
+			}
+			li.onmousedown=function(){
+				this.className=" ";	
+				this.lastChild.style.height=0+"px";
+				this.lastChild.style.width=0+"px";
+				this.lastChild.style.display="none";		
+			}
+
+		}
+
+		li.onmouseover=function(event) {
+			for(var j=0;j<allLists.length;j++){
+			//取出单个li标签
+			var li=allLists[j];
+			li.style.left=_.random(0,screenW)+"px";
+			li.style.top=_.random(0,screenH)+"px";
+			}
+
+			var img2=document.getElementsByClassName("img2")[0];
+			img2.style.display="none";
+			var img3=document.getElementsByClassName("img3")[0];
+			img3.style.display="none";
+		};
+
+		li.onblur=function(event){
+			for(var j=0;j<allLists.length;j++){
+			//取出单个li标签
+			var li=allLists[j];
+
+			//随机分布
+			li.style.left=450+"px";
+			li.style.top=100+"px";	
+			}	
+		}
+
+		function bigger(){
+			var big=document.getElementsByClassName("main3")[0];
+			big.style.height=600+"px";
+			big.style.width=1000+"px";
+			big.style.left=230+"px";
+			var main4=document.getElementsByClassName("main4")[0];
+			main4.style.display="block";
+		}
+
+		function smaller(){
+			var small=document.getElementsByClassName("main3")[0];
+			small.style.height=40+"px";
+			small.style.width=400+"px";
+			small.style.left=580+"px";
+		}
+
+		function fabu(){
+			alert("发布成功！");
+		}
+
+
+		//animate
+	function getStyle(obj, attr){
+	if(obj.currentStyle){
+		return obj.currentStyle[attr];
+	} else {
+		return getComputedStyle(obj, null)[attr];
+	}
+	}
+	function animate(obj,json,callback){
+	clearInterval(obj.timer);
+	obj.timer = setInterval(function(){
+		var isStop = true;
+		for(var attr in json){
+			var now = 0;
+			if(attr == 'opacity'){
+				now = parseInt(getStyle(obj,attr)*100);
+			}else{
+				now = parseInt(getStyle(obj,attr));
+			}
+			var speed = (json[attr] - now) / 8;
+			speed = speed>0?Math.ceil(speed):Math.floor(speed);
+			var cur = now + speed;
+			if(attr == 'opacity'){
+				obj.style[attr] = cur / 100;
+			}else{
+				obj.style[attr] = cur + 'px';
+			}
+			if(json[attr] !== cur){
+				isStop = false;
+			}
+		}
+		if(isStop){
+			clearInterval(obj.timer);
+			callback&&callback();
+		}
+	}, 30)
+	}
+
+		var slider=document.getElementById("slider");
+		var i=1;
+		var timer=setInterval(function(){
+			i++;
+			console.log(i);
+			if(i==7){
+				i=1;
+			}
+			animate(slider,{left:-365*i});
+			},3000);
+	</script>
+</body>
+</html>

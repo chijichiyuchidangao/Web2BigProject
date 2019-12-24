@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+			font-family: "微软雅黑"；
+		}
+		input{
+			outline-style: none;
+		}
+		a{
+		text-decoration: none;
+		color: black;
+		}
+		ul{
+			list-style-type: none;
+		}
+		li{
+			display: inline-block;
+		}
+		.flame{
+			float: left;
+		}
+		body{
+			position: relative;
+			overflow:scroll;
+			overflow-x:hidden;
+		}
+		/*主体框架*/
+		.top{
+			width: 100%;
+			height: 60px;
+			border-top: 5px solid  black;
+			position: fixed;
+			background-color: white;
+		}
+		.logo{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			margin-left: 100px;
+			float: left;
+		}
+		.logo>img{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			float: left;
+		}
+		.find{
+			width: 550px;
+			height: 45px;
+			display: inline-block;
+			float: left;
+			margin-left: 120px;
+			margin-top: 8px;
+		}
+		.find input{
+			width: 550px;
+			height: 45px;
+			text-align: center;
+			font-size: 14.78px;
+			color: #d6d6d6;
+			border:2px solid rgb(50,50,50);
+			border-radius: 15px;
+		}
+		.fimg{
+			width: 60px;
+			height: 40px;
+			margin-left: -60px;
+			margin-top: 8px;
+			display: inline-block;
+		}
+		.fimg input{
+			width: 60px;
+			height: 38px;
+			margin-top: 3px;
+			background-image: url(img/search.png);
+			background-color: #ffffff;
+			background-repeat: no-repeat;
+			background-position:center;
+			border: none;
+			border-radius: 10px;
+		}
+		.topright{
+			width: 360px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			margin-right: 30px;
+			margin-top: 5px;
+			float: right;
+		}
+		.tr1{
+			width: 90px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr1:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr2{
+			width: 72px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr2:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr1>a>img{
+			margin-top: 10px;
+			height: 25px;
+			width: 25px;
+			float: left;
+		}
+		.backpage{
+			width: 100%;
+			height: 1200px;
+		}
+		.main{
+			height: 610px;
+			margin: 0px auto;
+		}
+		.k{
+			height: 60px;
+		}
+		#scroll{
+			width: 1578px;
+			margin-top: 5px;
+			position: fixed;
+			background-color: white;
+		}
+		#scroll>img{
+			margin-left: 120px;
+		}
+		#time{
+			margin-right: 120px;
+		}
+		#pra{
+			color: rgb(194,204,216);
+			width: 1000px;
+			overflow: hidden;
+			float: left;
+		}
+		#mouse{
+			width: 40px;
+			height: 40px;
+			float: left;
+		}
+		#time{
+			float: right;
+			margin-left: 100px;
+			border: 2px solid black;
+			border-radius: 10px;
+			background-color: white;
+		}
+		#time>img{
+			width: 46px;
+			height: 46px;
+		}
+		#tim{
+			float: right;
+			font-size: 20px;
+			margin-top: 10px;
+		}
+		.left{
+			top: 120px;
+			border-radius: 10px;
+			display: inline-block;
+			position: fixed;
+		}
+		.nav{
+			height: 55px;
+			width: 150px;
+			margin:5px;
+			text-align: center;
+			line-height: 55px;
+			font-size: 20px;
+			background: rgba(50,50,50,0.8);
+			border-radius: 10px;
+			cursor: pointer;
+			overflow: hidden;
+		}
+		#nav{
+			margin-left: -120px;
+		}
+		#nav1{
+			margin-left: -120px;
+		}
+		#nav2{
+			margin-left: -120px;
+		}
+		#nav3{
+			margin-left: -120px;
+		}
+		#nav4{
+			margin-left: -120px;
+		}
+		#nav5{
+			margin-left: -120px;
+		}
+		#nav6{
+			margin-left: -120px;
+		}
+		.nav>a{
+		color: #ffffff;
+		}
+		#nav4{
+			margin-left: -20px;
+ 			border-radius: 10px;
+ 		}
+		/*分组实现*/
+		/*首页 by 田文秀*/
+		#marquee{
+			position: fixed;
+			bottom: 10px;
+			left: 0px;
+		}
+		.banner{
+			width: 1400px;
+			height: 500px;
+			margin-left: 130px;
+		}
+		.silder{
+			width: 1200px;
+			height: 500px;
+			margin-top: 100px;
+			float: left;
+		}
+		.silder img{
+			width: 1400px;
+			height: 500px;
+			float: left;
+		}
+		.banner-choose{
+			float: left;
+			height: 50px;
+			margin-left: 200px;
+		}
+		.banner-choose>ul>li{
+			height: 50px;
+			width: 180px;
+			float: left;
+			line-height: 60px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.unsee{
+			float: left;
+/*			display: none;*/
+		}
+		.walkingMan{
+			float: left;
+			width: 1579px;
+			float: left;
+		}
+		.walkingMan img{
+			width: 200px;
+			height: 150px;
+			margin-left: 50px;
+			float: left;
+		}
+		#boxImgs{
+			float:left;
+		}
+		#line1{
+			width: 1500px;
+			float: left;
+		}
+		#line2{
+			width: 1500px;
+			float: left;
+		}
+		#special{
+			margin-left: 0px;
+		}
+		.try{
+			float: left;
+			width: 1579px;
+			height: 450px;
+		}
+		.div{
+			display: inline-block;
+		}
+		#p{
+			float:left;
+			margin-left: 400px;
+		}
+		.p{
+			margin-left: 120px;
+		}
+		.circle {
+        	width: 100px;
+        	height: 100px;
+        	margin: 15px;
+			border-radius:10% 20% 30% 40%;
+        	margin-left: 120px;
+        	display: inline-block;
+    	}
+    	.input{
+    		margin-left: 120px;
+    		font-size: 20px;
+    	}
+    	.input>input{
+    		height: 80px;
+    		border-radius: 50%;
+    	}
+    	.input>button{
+    		width: 100px;
+    		height: 100px;
+    		border-radius: 50%;
+    	}
+    	.share{
+    		width: 1575px;
+    		height: 800px;
+    		float: left;
+    	}
+    	.shareBox{
+    		width: 250px;
+    		height: 400px;
+    		float: left;
+    		border: 4px black;
+    		margin-left: 110px;
+    	}
+    	.hide1{
+    		width: 250px;
+    		height: 400px;
+    		background:rgba(150,150,150,0.5);
+    		position: absolute;
+    		top:1475px;
+    		display: none;
+    	}
+    	.hide2{
+    		width: 250px;
+    		height: 400px;
+    		background:rgba(150,150,150,0.5);
+    		position: absolute;
+    		top:1475px;
+    		left: 470px;
+    		display: none;
+    	}
+    	.hide3{
+    		width: 250px;
+    		height: 400px;
+    		background:rgba(150,150,150,0.5);
+    		position: absolute;
+    		top:1475px;
+    		left: 830px;
+    		display: none;
+    	}
+    	.hide4{
+    		width: 250px;
+    		height: 400px;
+    		background:rgba(150,150,150,0.5);
+    		position: absolute;
+    		top:1475px;
+    		left: 1190px;
+    		display: none;
+    	}
+    	.hide5{
+    		width: 250px;
+    		height: 400px;
+    		background:rgba(150,150,150,0.5);
+    		position: absolute;
+    		top:1875px;
+    		display: none;
+    	}
+    	.hide6{
+    		width: 250px;
+    		height: 400px;
+    		background:rgba(150,150,150,0.5);
+    		position: absolute;
+    		top:1875px;
+    		left: 470px;
+    		display: none;
+    	}
+    	.hide7{
+    		width: 250px;
+    		height: 400px;
+    		background:rgba(150,150,150,0.5);
+    		position: absolute;
+    		top:1875px;
+    		left: 830px;
+    		display: none;
+    	}
+    	.hide8{
+    		width: 250px;
+    		height: 400px;
+    		background:rgba(150,150,150,0.5);
+    		position: absolute;
+    		top:1875px;
+    		left: 1190px;
+    		display: none;
+    	}
+    	.shareBox img{
+    		width: 250px;
+    		height: 400px;
+    		float: left;
+    	}
+    	.shareBox button{
+    		width: 100px;
+    		height: 100px;
+    		border-radius: 50%;
+    		margin-left: 10px;
+    		margin-top: 40px;
+    	}
+    	.bottom{
+    		width: 1575px;
+    		height: 300px;
+    		float: left;
+    		background:black;
+    	}
+    	.bottom ul{
+    		margin-top: 40px;
+    		margin-left: 100px;
+    	}
+    	.bottom li{
+    		margin-right: 200px;
+    		margin-top: 30px;
+    		color: #ccc;
+    	}
+	</style>
+</head>
+<!-- 主题架构 -->
+<body>
+	<div id="flame"></div>
+	<div class="top" id="top" >
+		<div class="logo" id="logo">
+			<a href="web_homework.html"><img src="img/logo3.png" style="height: 60px;"></a>
+		</div>
+		<form>
+			<div class="find" id="find"><input type="text" name="find" value="发现新世界"></div>
+		    <div class="fimg" id="fimg"> <input type="submit" name="fimg" value="&nbsp"></div>
+			<div class="topright" id="toprigh">
+				<div class="tr1" id="tr1"><a href="web_homework.html"><img src="img/home.png">主&nbsp&nbsp页</a></div>
+				<div class="tr1" id="tr1"><a href="#"><img src="img/find.png">发&nbsp&nbsp现</a></div>
+				<div class="tr2" id="tr2"><a href="page/register.html" target="_blank">登&nbsp&nbsp录&nbsp&nbsp&nbsp</a>|</div>
+				<div class="tr1" id="tr1"><a href="#">注&nbsp&nbsp册</a></div>
+			</div>
+		</form>
+	</div>
+	<div class="k" id="k"></div>
+	<div class="backpage" id="backpage">
+		<div id="scroll">
+			<img src="img/s1.gif" id="mouse">
+			<div id = "pra">
+				<marquee behavior = "scroll" direction = "left" id ="marquee"></marquee>
+			</div>
+			<div id="time">
+				<img src="img/s2.gif"/>
+				<div id="tim">
+					<p id="paragraph"></p>
+				</div>
+			</div>
+		</div>
+		<div class="main" id="main">
+			<div class="left" id="left">
+				<div class="nav" id="nav1"><a  href="web_homework.html">首&nbsp&nbsp&nbsp页</a></div>
+				<div class="nav" id="nav2" ><a href="#">美&nbsp&nbsp&nbsp食</a></div>
+				<div class="nav" id="nav3"><a href="#">汽&nbsp&nbsp&nbsp车</a></div>
+				<div class="nav" id="nav4" ><a href="#">美&nbsp&nbsp&nbsp妆</a></div>
+				<div class="nav" id="nav5"><a href="#">游&nbsp&nbsp&nbsp戏</a></div>
+				<div class="nav" id="nav6"><a href="#">计&nbsp算&nbsp机</a></div>
+			</div>
+			<div class="banner" id="banner">
+				<div class="silder" id="silder">
+					<img id="banner-img" src="https://www.dior.cn/beauty/zh_cn/store/media/wysiwyg/xmas2019/pc/mcd.jpg"/>
+				</div>
+				<div class="banner-choose">
+					<ul id="banner-choose">
+						<li><a href="https://www.dior.cn/zh_cn?utm_source=baidu_brz&utm_medium=cpc&utm_campaign=CN-ZH-OND-BAI-BZN-BRA-UNI-ONE_DIOR&utm_content=OneDior&utm_term=Title" target="blank">Dior</a></li>
+						<li><a href="https://www.givenchy.com/apac/zh/homepage?utm_source=Baidu&utm_medium=PaidSearch&utm_campaign=ps_ppc_brand_brandCN_cn_pc_all&cmpid" target="blank">GIVENCHY</a></li>
+						<li><a href="https://www.yslbeautycn.com/landingpage/2019-xmas?utm_source=baidu%5Fbz&utm_medium=cpc&utm_campaign=SEM%5FYSL%5FBaiduPCBZ%5F20180105&utm_content=Title" target="blank">YSL</a></li>
+						<li><a href="https://www.maccosmetics.com.cn/?cm_mmc=baidu-_-Brand-_-Brand%5Fmac%E5%93%81%E7%89%8C-_-mac" target="blank">MAC</a></li>
+						<li><a href="https://www.chanel.cn/zh_CN/?utm_source=baidu&utm_medium=brandzone&utm_campaign=20161213_ec_launch&utm_content=pc_top_title&utm_term=corp_pc&ag_kwid=17195-4-f0dc3eb6f46aed3d.8e88e4845ec82f51" target="blank">CHANEL</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="walkingMan" id="walkingMan">
+			<img src="img/line1.png" id="line1"/>
+			<marquee behavior = "alternate" direction = "left" id ="marquee" onMouseOut="this.start()" onMouseOver="this.stop()">
+			<ul id = "boxImgs">
+				<li><a href="#"><img id="special"src="img/box1.png"/></a></li>
+				<li><a href="#"><img src="img/box2.png"/></a></li>
+				<li><a href="#"><img src="img/box3.png"/></a></li>
+				<li><a href="#"><img src="img/box4.png"/></a></li>
+				<li><a href="#"><img src="img/box5.png"/></a></li>
+			</ul>
+			</marquee>
+		</div>
+		<div class="try" id="try">
+			<!-- 试色卡 -->
+			<div class="p"><h3>点击下方试色卡,DIY你心仪的口红色号</h3></div>
+			<div id="div" onclick = "circle()" class="div">
+        		<div class="circle" style="background:rgba(255,0,0,0.4)" onclick="circle()"></div>
+    		</div>
+    		<div id="div1" onclick = "circle1()" class="div">
+        		<div class="circle" style="background:rgba(255,0,0,0.4)" onclick="circle1()"></div>
+    		</div>
+    		<div id="div3" onclick = "circle3()" class="div">
+        		<div class="circle" style="background:rgba(255,0,0,0.4)" onclick="circle3()"></div>
+    		</div>
+    		<div id="div4" onclick = "circle4()" class="div">
+        		<div class="circle" style="background:rgba(255,0,0,0.4)" onclick="circle4()"></div>
+    		</div>
+    		<div id="div5" onclick = "circle5()" class="div">
+        		<div class="circle" style="background:rgba(255,0,0,0.4)" onclick="circle5()"></div>
+    		</div>
+    		<div class="p"><h3>还可以自己手动调出你喜欢的颜色哦~</h3></div>
+    		<div>
+    			<div id ="color2">
+        			<div class="circle" style="background:rgba(255,0,0,0.4)"></div>
+    			</div>
+    			<div class="input" id="input">
+    				红色调的系数(0~255)
+    				<input type="text" value="255" />
+    				绿色调的系数(0~255)
+    				<input type="text" value="0" />
+    				蓝色调的系数(0~255)
+    				<input type="text" value="0" />
+    				<button onclick="ByTry()">试一试</button>
+    			</div>
+    		</div>
+		</div>
+		<img src="img/line2.png" id="line2"/>
+		<div class="share" id="share">
+			<div class="shareBox">
+				<img src="img/share1.jpg" />
+				<div class="hide1">
+					<button>ta的主页</button>
+					<button>更多相关内容</button>
+					<button>为ta点赞</button>
+					<button>说点什么</button>
+				</div>
+			</div>
+			<div class="shareBox">
+				<img src="img/share2.jpg" />
+				<div class="hide2">
+					<button>ta的主页</button>
+					<button>更多相关内容</button>
+					<button>为ta点赞</button>
+					<button>说点什么</button>
+				</div>
+			</div>
+			<div class="shareBox">
+				<img src="img/share3.jpg" />
+				<div class="hide3">
+					<button>ta的主页</button>
+					<button>更多相关内容</button>
+					<button>为ta点赞</button>
+					<button>说点什么</button>
+				</div>
+			</div>
+			<div class="shareBox">
+				<img src="img/share4.jpg" />
+				<div class="hide4">
+					<button>ta的主页</button>
+					<button>更多相关内容</button>
+					<button>为ta点赞</button>
+					<button>说点什么</button>
+				</div>
+			</div>
+			<div class="shareBox">
+				<img src="img/share5.jpg" />
+				<div class="hide5">
+					<button>ta的主页</button>
+					<button>更多相关内容</button>
+					<button>为ta点赞</button>
+					<button>说点什么</button>
+				</div>
+			</div>
+			<div class="shareBox">
+				<img src="img/share6.jpg" />
+				<div class="hide6">
+					<button>ta的主页</button>
+					<button>更多相关内容</button>
+					<button>为ta点赞</button>
+					<button>说点什么</button>
+				</div>
+			</div>
+			<div class="shareBox">
+				<img src="img/share7.jpg" />
+				<div class="hide7">
+					<button>ta的主页</button>
+					<button>更多相关内容</button>
+					<button>为ta点赞</button>
+					<button>说点什么</button>
+				</div>
+			</div>
+			<div class="shareBox">
+				<img src="img/share8.jpg" />
+				<div class="hide8">
+					<button>ta的主页</button>
+					<button>更多相关内容</button>
+					<button>为ta点赞</button>
+					<button>说点什么</button>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<ul>
+				<li>沪公网安备 31010602003121号</li>
+				<li>ICP备案序号:沪ICP备05026645号</li>
+				<li>食品经营许可证</li>
+				<li>网站使用条款</li>
+				<li>严正声明</li>
+				<li>本网站隶属于丝芙兰（上海）化妆品销售有限公司（企业法人营业执照）</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 分享栏出现消失 -->
+	<script type="text/javascript">
+		var shareBoxs = document.getElementById("share").children;
+		shareBoxs[0].onmouseover = function(){
+			
+			shareBoxs[0].children[1].style.display="block";
+		}
+		shareBoxs[0].onmouseout = function(){
+			shareBoxs[0].children[1].style.display="none";
+		}
+		shareBoxs[1].onmouseover = function(){
+			shareBoxs[1].children[1].style.display="block";
+		}
+		shareBoxs[1].onmouseout = function(){
+			shareBoxs[1].children[1].style.display="none";
+		}
+		shareBoxs[2].onmouseover = function(){
+			shareBoxs[2].children[1].style.display="block";
+		}
+		shareBoxs[2].onmouseout = function(){
+			shareBoxs[2].children[1].style.display="none";
+		}
+		shareBoxs[3].onmouseover = function(){
+			shareBoxs[3].children[1].style.display="block";
+		}
+		shareBoxs[3].onmouseout = function(){
+			shareBoxs[3].children[1].style.display="none";
+		}
+		shareBoxs[4].onmouseover = function(){
+			shareBoxs[4].children[1].style.display="block";
+		}
+		shareBoxs[4].onmouseout = function(){
+			shareBoxs[4].children[1].style.display="none";
+		}
+		shareBoxs[5].onmouseover = function(){
+			shareBoxs[5].children[1].style.display="block";
+		}
+		shareBoxs[5].onmouseout = function(){
+			shareBoxs[5].children[1].style.display="none";
+		}
+		shareBoxs[6].onmouseover = function(){
+			shareBoxs[6].children[1].style.display="block";
+		}
+		shareBoxs[6].onmouseout = function(){
+			shareBoxs[6].children[1].style.display="none";
+		}
+		shareBoxs[7].onmouseover = function(){
+			shareBoxs[7].children[1].style.display="block";
+		}
+		shareBoxs[7].onmouseout = function(){
+			shareBoxs[7].children[1].style.display="none";
+		}
+	</script>
+	<!-- 实现试色卡的效果 -->
+	<script>
+		// 试色卡一
+   		var div = document.getElementById('div');
+   		var div1 = document.getElementById('div1');
+   		var div3 = document.getElementById('div3');
+   		var div4 = document.getElementById('div4');
+   		var div5 = document.getElementById('div5');
+   		var x,y,z,w=1;
+    	function color(){
+    		x = parseInt(Math.random()*255);
+        	y = parseInt(Math.random()*255);
+        	z = parseInt(Math.random()*255);
+        	return 'rgba('+x+','+y+','+z+','+w+')"></div>';
+    	}
+    	function circle(){
+        	div.innerHTML = '<div class="circle" style="background:'+color();
+    	}
+    	function color1(){
+    		x = parseInt(Math.random()*255);
+        	y = parseInt(Math.random()*255);
+        	z = parseInt(Math.random()*255);
+        	return 'rgba('+x+','+y+','+z+','+w+')"></div>';
+    	}
+    	function circle1(){
+        	div1.innerHTML = '<div class="circle" style="background:'+color1();
+    	}
+    	function color3(){
+    		x = parseInt(Math.random()*255);
+        	y = parseInt(Math.random()*255);
+        	z = parseInt(Math.random()*255);
+        	return 'rgba('+x+','+y+','+z+','+w+')"></div>';
+    	}
+    	function circle3(){
+        	div3.innerHTML = '<div class="circle" style="background:'+color3();
+    	}
+    	function color4(){
+    		x = parseInt(Math.random()*255);
+        	y = parseInt(Math.random()*255);
+        	z = parseInt(Math.random()*255);
+        	return 'rgba('+x+','+y+','+z+','+w+')"></div>';
+    	}
+    	function circle4(){
+        	div4.innerHTML = '<div class="circle" style="background:'+color4();
+    	}
+    	function color5(){
+    		x = parseInt(Math.random()*255);
+        	y = parseInt(Math.random()*255);
+        	z = parseInt(Math.random()*255);
+        	return 'rgba('+x+','+y+','+z+','+w+')"></div>';
+    	}
+    	function circle5(){
+        	div5.innerHTML = '<div class="circle" style="background:'+color5();
+    	}
+    	// 试色卡二
+    	var color2 = document.getElementById("color2");
+    	var r,g,b;
+    	function ByTry(){
+    		var input = document.getElementById("input").children;
+    		r=input[0].value;
+    		g=input[1].value;
+    		b=input[2].value;
+    		color2.innerHTML = '<div class="circle" style="background:rgba('+r+','+g+','+b+',0.8)"></div>';
+    	}
+	</script>
+	<!-- 雪花飘落效果实现 -->
+	<script type="text/javascript">
+		function Obj(){}  //创建一个对象
+    	/*为这个对象添加一个具有一个参数的原型方法*/
+    	Obj.prototype.draw=function(o){
+        	var speed=0;   //雪花每次下落的数值（10px）
+        	var startPosLeft=Math.ceil(Math.random()*document.documentElement.clientWidth);//设置雪花随机的开始x值的大小
+        	o.style.opacity=(Math.ceil(Math.random()*3)+7)/10;  //设置透明度
+        	o.style.left=startPosLeft+'px'; 
+        	o.style.color="#fff";
+        	o.style.fontSize=12+Math.ceil(Math.random()*14)+'px';
+        	setInterval(function(){
+            	    o.style.top=speed+'px';
+            	    o.style.left=startPosLeft+Math.ceil(Math.random()*8)+'px';
+                	speed+=10;
+        	},400);
+    	}
+    	var flame=document.getElementById('flame');
+    	/*使用setInterval定时器每800毫秒创建一个雪花*/
+    	setInterval(function(){
+        	var odiv=document.createElement('div'); //创建div
+        	odiv.innerHTML="✽";   //div的内容
+        	odiv.style.position='absolute';  //div的绝对定位
+        	flame.appendChild(odiv);   //把创建好的div放进flame中
+        	var obj=new Obj();   //创建函数
+        	obj.draw(odiv);  //执行obj的draw方法
+    	},800); 
+	</script>
+
+	<!-- animate -->
+	<script type="text/javascript">
+		function animate(obj,json,callback){
+			clearInterval(obj.timer);
+			obj.timer = setInterval(function(){
+				var isStop = true;
+				for(var attr in json){
+					var now = 0;
+					if(attr == 'opacity'){
+						now = parseInt(getStyle(obj,attr)*100);
+					}else{
+						now = parseInt(getStyle(obj,attr));
+					}
+					var speed = (json[attr] - now) / 8;
+					speed = speed>0?Math.ceil(speed):Math.floor(speed);
+					var cur = now + speed;
+					if(attr == 'opacity'){
+						obj.style[attr] = cur / 100;
+					}else{
+						obj.style[attr] = cur + 'px';
+					}
+					if(json[attr] !== cur){
+						isStop = false;
+					}
+				}
+				if(isStop){
+					clearInterval(obj.timer);
+					callback&&callback();
+				}
+			}, 30)
+		}
+	</script>
+
+	<script type="text/javascript">
+		// 主体框架
+		input = document.getElementsByTagName('input')[0];
+		input.onclick = function () {
+			input.value = " ";
+		}
+		input.onblur = function(){
+			input.value = "发现新世界";
+		}
+		var img = document.getElementById("banner-img");
+		var choose = document.getElementById("banner-choose").children;
+		choose[0].onmouseover=function(){
+			img.src="https://www.dior.cn/beauty/zh_cn/store/media/wysiwyg/xmas2019/pc/mcd.jpg";
+		}
+		choose[1].onmouseover=function(){
+			img.src="https://gdp.alicdn.com/imgextra/i4/3570503317/O1CN01ffyGGj1aNEKQydCWK_!!3570503317.jpg";
+		}
+		choose[2].onmouseover=function(){
+			img.src="https://res.yslbeautycn.com/resources/2019/10/24/1571917570738737.jpg";
+		}
+		choose[3].onmouseover=function(){
+			img.src="https://www.maccosmetics.com.cn/media/export/cms/home/holiday_color_1920X500_191128.jpg";
+		}
+		choose[4].onmouseover=function(){
+			img.src="https://gdp.alicdn.com/imgextra/i3/4207517744/O1CN01RFg3Qz274nhZhYDWt_!!4207517744.jpg";
+		}
+	</script>
+
+	<script type="text/javascript">
+		// 主体框架
+		function getStyle(obj,style) {  
+	    	if(obj.currentStyle){  
+	    		return obj.currentStyle[style];  
+	    	} 
+	    	else 
+	    	{  
+	    		return getComputedStyle(obj)[style];
+	    	}  
+	    }
+		var input = document.getElementsByTagName('input')[0];
+		var left = document.getElementById('left');
+		var nav1 = document.getElementById('nav1');
+		var nav2 = document.getElementById('nav2');
+		var nav3 = document.getElementById('nav3');
+		var nav4 = document.getElementById('nav4');
+		var nav5 = document.getElementById('nav5');
+		var nav6 = document.getElementById('nav6');
+		var marquee = document.getElementById('marquee');
+		var paragraph = document.getElementById('paragraph');
+		var now = new Date();
+		var day = 32;
+		input.onclick = function () {
+			input.value = " ";
+		}
+		input.onblur = function(){
+			input.value = "发现新世界";
+		}
+		nav1.onmouseout = function(){
+			nav1.style.marginLeft= '-120px';
+		}
+		nav1.onmouseover = function(){
+			nav1.style.marginLeft = '-20px';
+		}
+		nav2.onmouseout = function(){
+			nav2.style.marginLeft= '-120px';
+		}
+		nav2.onmouseover = function(){
+			nav2.style.marginLeft = '-20px';
+		}
+		nav3.onmouseout = function(){
+			nav3.style.marginLeft = '-120px';
+		}
+		nav3.onmouseover = function(){
+			nav3.style.marginLeft = '-20px';
+		}
+		nav5.onmouseout = function(){
+			nav5.style.marginLeft = '-120px';
+		}
+		nav5.onmouseover = function(){
+			nav5.style.marginLeft = '-20px';
+		}
+		nav6.onmouseout = function(){
+			nav6.style.marginLeft= '-120px';
+		}
+		nav6.onmouseover = function(){
+			nav6.style.marginLeft = '-20px';
+		}
+		function getTime(){
+			var date = new Date();
+			var hour = date.getHours();
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+			var hour1 = hour<10?'0' + hour :hour;
+			var minute1 = minute<10?'0' + minute :minute;
+			var second1 = second<10?'0' + second :second;
+			paragraph.innerHTML = hour1 + "：" + minute1 + "："+ second1;
+		}
+		getTime();
+		setInterval(getTime,1000);
+		function scroll(){
+			var date1 = new Date();
+			var year = date1.getFullYear();
+			if(year == 2019){
+				marquee.innerHTML = "距 离 2020 年 仅 剩 " + (day-now.getDate()) + " 天 ! ! ! ";
+			}
+			else{
+				marquee.innerHTML = "今 天 也 是 活 力 满 满 的 一 天 ！ 加 油 ！ 奥 利 给 ！";
+			}
+		}
+		scroll();
+	</script>
+</body>
+</html>

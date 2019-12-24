@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>share_computer</title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+			font-family: "微软雅黑"；
+		}
+		input{
+			outline-style: none;
+		}
+		a{
+		text-decoration: none;
+		color: black;
+		}
+		ul{
+			list-style-type: none;
+		}
+		li{
+			display: inline-block;
+		}
+		p{
+			display: inline-block;
+		}
+		/*主体框架*/
+		.top{
+			width: 100%;
+			height: 60px;
+			border-top: 5px solid  black;
+			position: fixed;
+			z-index:2;
+			background: white;
+		}
+		.logo{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			margin-left: 100px;
+			float: left;
+		}
+		.logo>img{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			float: left;
+		}
+		.find{
+			width: 550px;
+			height: 45px;
+			display: inline-block;
+			float: left;
+			margin-left: 120px;
+			margin-top: 8px;
+		}
+		.find input{
+			width: 550px;
+			height: 45px;
+			text-align: center;
+			font-size: 14.78px;
+			color: #d6d6d6;
+			border:2px solid rgb(50,50,50);
+			border-radius: 15px;
+		}
+		.fimg{
+			width: 60px;
+			height: 40px;
+			margin-left: -60px;
+			margin-top: 8px;
+			display: inline-block;
+		}
+		.fimg input{
+			width: 60px;
+			height: 38px;
+			margin-top: 3px;
+			background-image: url(img/search.png);
+			background-color: #ffffff;
+			background-repeat: no-repeat;
+			background-position:center;
+			border: none;
+			border-radius: 10px;
+		}
+		.topright{
+			width: 360px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			margin-right: 30px;
+			margin-top: 5px;
+			float: right;
+		}
+		.tr1{
+			width: 90px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr1:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr2{
+			width: 72px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr2:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr1>a>img{
+			margin-top: 10px;
+			height: 25px;
+			width: 25px;
+			float: left;
+		}
+		.backpage{
+			width: 100%;
+			height: 1200px;
+		}
+		.main{
+			height: 1200px;
+			margin: 0px auto;
+		}
+		.k{
+			height: 66px;
+		}
+		#scroll{
+			margin-left: 200px;
+			height: 30px;
+			/*width: 1250px;*/
+			position: fixed;
+		}
+		#pra{
+			color: rgb(194,204,216);
+			width: 1000px;
+			overflow: hidden;
+			float: left;
+			margin-top: 15px;
+		}
+		#mouse{
+			width: 40px;
+			height: 40px;
+			float: left;
+		}
+		#time{
+			float: right;
+			margin-left: 100px;
+			border: 2px solid black;
+			border-radius: 10px;
+		}
+		#time>img{
+			width: 46px;
+			height: 46px;
+		}
+		#tim{
+			float: right;
+			font-size: 20px;
+			margin-top: 10px;
+		}
+		.left{
+			top: 120px;
+			border-radius: 10px;
+			display: inline-block;
+			position: fixed;
+		}
+		.nav{
+			height: 55px;
+			width: 150px;
+			margin:5px;
+			text-align: center;
+			line-height: 55px;
+			font-size: 20px;
+			background: rgba(50,50,50,0.8);
+			border-radius: 10px;
+			cursor: pointer;
+			overflow: hidden;
+		}
+		#nav1{
+			margin-left: -120px;
+		}
+		#nav2{
+			margin-left: -120px;
+		}
+		#nav3{
+			margin-left: -120px;
+		}
+		#nav4{
+			margin-left: -120px;
+		}
+		#nav5{
+			margin-left: -120px;
+		}
+		#nav6{
+			margin-left: -120px;
+		}
+		.nav>a{
+		color: #ffffff;
+		}
+		#nav6{
+			margin-left: -20px;
+ 			border-radius: 10px;
+ 		}
+		
+		/*首页 by 田文秀*/
+		/*分组实现*/
+		.lbt{
+			height: 350px;
+			width: 1200px;
+			position: relative;
+			margin: 0px auto;
+			border: 2px solid black;
+			overflow: hidden;
+			top: 55px;
+		}
+		#out{
+			height: 350px;
+			width: 8400px;
+ 			position: absolute;
+ 			overflow: hidden;
+ 			left:-1200px;
+		}
+		.slide{
+			height: 350px;
+			width: 1200px;
+			overflow: hidden;
+ 			float: left;
+		}
+		.slide>a>img{
+			height: 350px;
+			width: 1200px;
+		}
+		.lbt>span{
+ 			display: block;
+ 			width: 40px;
+ 			height: 80px;
+ 			text-align: center;
+ 			cursor: pointer;
+ 			color: #eee;
+ 			top: 155px;
+ 			line-height: 50px;
+ 			background: red;
+ 			font-size: 30px;
+ 			opacity: 0;
+ 			position: absolute;
+ 		}
+		#leftc{
+ 			left: 30px;
+ 		}
+ 		#rightc{
+ 			right: 30px;
+ 		}
+ 		.navc{
+ 			position: absolute;
+ 			left: 500px;
+ 			bottom:20px;
+ 		}
+ 		.navc>li{
+ 			float: left;
+ 			width: 20px;
+ 			height: 20px;
+ 			background: #eee;
+ 			cursor: pointer;
+ 			margin: 0 10px;
+ 			border-radius: 50%;
+ 			list-style-type: none;
+ 		}
+ 		.navc .active{
+ 			background: red;
+ 		}
+ 		.buttom{
+ 			height: 400px;
+ 			width: 1200px;
+ 			border: solid 1px black;
+ 			position: relative;
+ 			top: 58px;
+ 			background-color: #ffffff;
+ 			margin: 0px auto;
+ 		}
+ 		.cblef{
+ 			height: 400px;
+ 			width: 596px;
+ 			border: solid 1px black;
+ 			position: relative;
+ 			float: left;
+ 			overflow: hidden;
+ 		}
+
+ 		.cbtitle{
+ 			height: 50px;
+ 			width: 596px;
+ 			background-color: #aaaaaa;
+ 			font-size: 25px;
+ 			line-height: 50px;
+ 			color:#aa7d3c;
+ 		}
+ 		.cbtitle>li{
+ 			width: 15px;
+ 			height: 15px;
+ 			background: #eee;
+ 			cursor: pointer;
+ 			margin: 0 10px;
+ 			border-radius: 50%;
+ 			list-style-type: none;
+ 			float: right;
+ 			margin-top: 30px;
+ 		}
+ 		.cblbt{
+ 			width: 1788px;
+ 			height: 350px;
+ 			position: absolute;
+ 			left: -1192px;
+ 		}
+ 		.boxone{
+ 			height: 350px;
+ 			width: 596px;
+ 			float: left;
+ 		}
+ 		.boxonef{
+ 			width: 596px;
+ 			height: 116px;
+ 			border-bottom: solid 1px #aaaaaa;
+ 		}
+ 		.cbrigh{
+ 			height: 400px;
+ 			margin-left: 2px;
+ 			width: 596px;
+ 			border: solid 1px black;
+ 			position: relative;
+ 			float: left;
+ 			overflow: hidden;
+ 		}
+ 		.cbtitler{
+ 			height: 50px;
+ 			width: 596px;
+ 			background-color: #aaaaaa;
+ 			font-size: 25px;
+ 			line-height: 50px;
+ 			color:#aa7d3c;
+ 		}
+ 		.cbtitler>li{
+ 			width: 15px;
+ 			height: 15px;
+ 			background: #eee;
+ 			cursor: pointer;
+ 			margin: 0 10px;
+ 			border-radius: 50%;
+ 			list-style-type: none;
+ 			float: right;
+ 			margin-top: 30px;
+ 		}
+ 		.cblbtr{
+ 			width: 1788px;
+ 			height: 350px;
+ 			position: absolute;
+ 			left: 0px;
+ 		}
+ 		.boxonef>img{
+ 			width: 180px;
+ 			height: 100px;
+ 			position: relative;
+ 			float: left;
+ 			left: 5px;
+ 			top: 5px;
+ 		}
+ 		.cbh{
+ 			width: 380px;
+ 			height: 68px;
+ 			position: relative;
+ 			float: left;
+ 			left: 20px;
+ 			top: 5px;
+ 		}
+ 		.cbact{
+ 			width: 380px;
+ 			height: 30px;
+ 			position: relative;
+ 			float: left;
+ 			left: 20px;
+ 			top: 15px;
+ 		}
+ 		.cbact>ul>li{
+ 			width: 80px;
+ 			height: 30px;
+ 			float: right;
+ 			line-height: 30px;
+ 			font-size: 5px;
+ 		}
+ 		.cbact>ul>li>a>img{
+ 			width: 25px;
+ 			height: 25px;
+ 		}
+		.cbh:hover>a{
+			color: #fa7d3c;
+		}
+		/*计算机 by 崔宫健*/
+	</style>
+</head>
+<!-- 主题架构 -->
+<body>
+	<div class="top" id="top" >
+		<div class="logo" id="logo">
+			<a href="index.html"><img src="img/logo3.png" style="height: 60px;"></a>
+		</div>
+		<form>
+			<div class="find" id="find"><input type="text" name="find" value="发现新世界"></div>
+		    <div class="fimg" id="fimg"> <input type="submit" name="fimg" value="&nbsp"></div>
+		<div class="topright" id="toprigh">
+			<div class="tr1" id="tr1"><a href="index.html"><img src="img/home.png">主&nbsp&nbsp页</a></div>
+			<div class="tr1" id="tr1"><a href="#"><img src="img/find.png">发&nbsp&nbsp现</a></div>
+			<div class="tr2" id="tr2"><a href="page/register.html" target="_blank">登&nbsp&nbsp录&nbsp&nbsp&nbsp</a>|</div>
+			<div class="tr1" id="tr1"><a href="#">注&nbsp&nbsp册</a></div>
+		</div>
+		</form>
+	</div>
+	<div class="k" id="k"></div>
+	<div class="backpage" id="backpage">
+		<div id="scroll">
+			<img src="img/s1.gif" id="mouse">
+			<div id = "pra">
+				<marquee behavior = "scroll" direction = "left" id ="marquee"></marquee>
+			</div>
+			<div id="time">
+				<img src="img/s2.gif">
+				<div id="tim">
+					<p id="paragraph"></p>
+				</div>
+			</div>
+		</div>
+		<div class="main" id="main">
+			<div class="left" id="left">
+				<div class="nav" id="nav1"><a  href="index.html">首&nbsp&nbsp&nbsp页</a></div>
+				<div class="nav" id="nav2" ><a href="#">美&nbsp&nbsp&nbsp食</a></div>
+				<div class="nav" id="nav3"><a href="#">汽&nbsp&nbsp&nbsp车</a></div>
+				<div class="nav" id="nav4" ><a href="#">美&nbsp&nbsp&nbsp妆</a></div>
+				<div class="nav" id="nav5"><a href="#">游&nbsp&nbsp&nbsp戏</a></div>
+				<div class="nav" id="nav6"><a href="computer.html">计&nbsp算&nbsp机</a></div>
+			</div>
+			<!-- 计算机 by 崔宫健 -->
+			<!-- 分组实现 -->
+			<div class="lbt" id="lbt">
+				<div cliss = "out" id="out">
+					<div class="slide"><a><img src="img/c5.jpg"></a></div>
+ 			        <div class="slide"><a href="https://www.lenovo.com.cn/"><img src="img/c1.jpg"></a></div>
+ 					<div class="slide"><a href="https://www.asus.com.cn/"><img src="img/c2.jpg"></a></div>
+ 					<div class="slide"><a href="https://www.asus.com.cn/"><img src="img/c3.jpg"></a></div>
+ 					<div class="slide"><a href="https://www.lenovo.com.cn/"><img src="img/c4.jpg"></a></div>
+ 					<div class="slide"><a href="http://www.hasee.com/chinese/index.aspx"><img src="img/c5.jpg"></a></div>
+ 					<div class="slide"><a><img src="img/c1.jpg"></a></div>
+				</div>
+				<span id="leftc"><</span>
+ 				<span id="rightc">></span>
+		 		<ul class="navc" id="navc">
+		 			<li class="active">&nbsp</li>
+		 			<li>&nbsp</li>
+		 			<li>&nbsp</li>
+		 			<li>&nbsp</li>
+		 			<li>&nbsp</li>
+		  		</ul>	
+			</div>
+
+			<div class="buttom" id="bottom">
+				<div class="cblef" id="cblef">
+					<div class="cbtitle" id="cbtitle">
+						<p>大神热帖</p>
+						<li>&nbsp</li>
+ 						<li>&nbsp</li>
+ 						<li>&nbsp</li>
+					</div>
+					<div class="cblbt" id="cblbt">
+						<div class="boxone" id="boxone">
+							<div class="boxonef">
+								<img src="img/cbl5.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>重装系统后要选择windows 7 Loader XE 还是 windows 7</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl2.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>用Arduino Leonardo制作虚拟键盘(简易badusb)</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl4.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>速上手Linux(一)：Linux简介、安装、准备工作</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="boxone" id= "boxone">
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>java：从入门到放弃</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl2.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>python：从入门到入狱</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl3.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>C语言：从入门到夺门而出</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="boxone" id="boxone">
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>有点干货 | JDK、CGLIB动态代理使用以及源码分析</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl2.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>第五讲 反爬策略 笔记5</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl3.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>C语言：从入门到放弃</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cbrigh">
+					<div class="cbtitler" id="cbtitler">
+						<p>人气测评</p>
+						<li>&nbsp</li>
+ 						<li>&nbsp</li>
+ 						<li>&nbsp</li>
+					</div>
+					<div class="cblbtr" id="cblbtr">
+						<div class="boxone">
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>有点干货 | JDK、CGLIB动态代理使用以及源码分析</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>有点干货 | JDK、CGLIB动态代理使用以及源码分析</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>有点干货 | JDK、CGLIB动态代理使用以及源码分析</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="boxone">
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>有点干货 | JDK、CGLIB动态代理使用以及源码分析</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>有点干货 | JDK、CGLIB动态代理使用以及源码分析</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>有点干货 | JDK、CGLIB动态代理使用以及源码分析</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="boxone">
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>有点干货 | JDK、CGLIB动态代理使用以及源码分析</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>有点干货 | JDK、CGLIB动态代理使用以及源码分析</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="boxonef">
+								<img src="img/cbl1.png">
+								<div class="cbh" id="cbh">
+									<a href="#"><h2>有点干货 | JDK、CGLIB动态代理使用以及源码分析</h2></a>
+								</div>
+								<div class="cbact" id="cbact">
+									<ul>
+										<li><a><img src="img/view.png">&nbsp浏&nbsp览&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/zf.png">&nbsp转&nbsp发&nbsp&nbsp<span>0</span></a></li>
+										<li><a><img src="img/pl.png">&nbsp评&nbsp论&nbsp&nbsp<span>0</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>	
+				
+			</div>
+		</div>
+			
+	</div>
+
+	
+	<script type="text/javascript">
+		// 主体框架
+		function getStyle(obj,style) {  
+	    	if(obj.currentStyle){  
+	    		return obj.currentStyle[style];  
+	    	} 
+	    	else 
+	    	{  
+	    		return getComputedStyle(obj)[style];
+	    	}  
+	    }
+		var input = document.getElementsByTagName('input')[0];
+		var left = document.getElementById('left');
+		var nav1 = document.getElementById('nav1');
+		var nav2 = document.getElementById('nav2');
+		var nav3 = document.getElementById('nav3');
+		var nav4 = document.getElementById('nav4');
+		var nav5 = document.getElementById('nav5');
+		var nav6 = document.getElementById('nav6');
+		var marquee = document.getElementById('marquee');
+		var paragraph = document.getElementById('paragraph');
+		var now = new Date();
+		var day = 32;
+		input.onclick = function () {
+			input.value = " ";
+		}
+		input.onblur = function(){
+			input.value = "发现新世界";
+		}
+		nav1.onmouseout = function(){
+			nav1.style.marginLeft= '-120px';
+		}
+		nav1.onmouseover = function(){
+			nav1.style.marginLeft = '-20px';
+		}
+		nav2.onmouseout = function(){
+			nav2.style.marginLeft= '-120px';
+		}
+		nav2.onmouseover = function(){
+			nav2.style.marginLeft = '-20px';
+		}
+		nav3.onmouseout = function(){
+			nav3.style.marginLeft = '-120px';
+		}
+		nav3.onmouseover = function(){
+			nav3.style.marginLeft = '-20px';
+		}
+		nav4.onmouseout = function(){
+			nav4.style.marginLeft= '-120px';
+		}
+		nav4.onmouseover = function(){
+			nav4.style.marginLeft = '-20px';
+		}
+		nav5.onmouseout = function(){
+			nav5.style.marginLeft = '-120px';
+		}
+		nav5.onmouseover = function(){
+			nav5.style.marginLeft = '-20px';
+		}
+		// nav6.onmouseout = function(){
+		// 	nav6.style.marginLeft= '-120px';
+		// }
+		// nav6.onmouseover = function(){
+		// 	nav6.style.marginLeft = '-20px';
+		// }
+		function getTime(){
+			var date = new Date();
+			var hour = date.getHours();
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+			var hour1 = hour<10?'0' + hour :hour;
+			var minute1 = minute<10?'0' + minute :minute;
+			var second1 = second<10?'0' + second :second;
+			paragraph.innerHTML = hour1 + "：" + minute1 + "："+ second1;
+		}
+		getTime();
+		setInterval(getTime,1000);
+		function scroll(){
+			var date1 = new Date();
+			var year = date1.getFullYear();
+			var tis = 0
+			if(year == 2019){
+				marquee.innerHTML = "距 离 2020 年 仅 剩 " + (day-now.getDate()) + " 天 ! ! ! ";
+			}
+			else{
+				marquee.innerHTML = "今 天 也 是 活 力 满 满 的 一 天 ！ 加 油 ！ 奥 利 给 ！";
+			}
+			tis++
+		}
+		scroll();
+		// 计算机 by 崔宫健
+		var lbt = document.getElementById("lbt");
+ 		var oNavlist = document.getElementById('navc').children;
+ 		var out = document.getElementById('out');
+ 		var navc = document.getElementById("navc");
+ 		var leftc = document.getElementById("leftc");
+ 		var rightc = document.getElementById("rightc");
+ 		var buttenlef = document.getElementById("cbtitle").children;
+ 		var cblbt = document.getElementById("cblbt");
+ 		var cblbtr = document.getElementById("cblbtr");
+ 		var buttenr = document.getElementById("cbtitler").children;
+ 		var i =1;
+ 		var timer;
+ 		var isMoving = false;
+
+ 		function next(){
+ 			i++;
+ 			navChange();
+		    animate(out,{left:-1200*i},function(){
+				if(i===6){
+					out.style.left = "-1200px";
+					i = 1;
+				}
+			});
+ 		}
+ 		function pre(){
+ 			i--;
+ 			navChange();
+			 animate(out,{left:-1200*i},function(){
+				if(i===0){
+					out.style.left = "-6000px";
+					i = 5;
+				}
+			});
+ 		}
+
+ 		lbt.onmouseover = function(){
+ 			animate(leftc,{opacity:50})
+ 			animate(rightc,{opacity:50})
+ 			clearInterval(timer)
+ 		}
+ 		lbt.onmouseout = function(){
+ 			animate(leftc,{opacity:0})
+ 			animate(rightc,{opacity:0})
+ 			timer = setInterval(next,2000)
+ 		}
+ 		leftc.onclick = next;
+ 		rightc.onclick = pre;
+
+ 		//按钮
+ 		for(var j = 0;j<oNavlist.length;j++){
+ 			oNavlist[j].idx = j;
+ 			oNavlist[j].onclick = function(){
+ 				i = this.idx+1;
+ 				navChange();
+ 				animate(out,{left:-1200*i});
+ 			}
+ 		}
+ 		//变红
+ 		function navChange(){
+ 			for(var j = 0;j<oNavlist.length;j++){
+ 				oNavlist[j].className = ' ';
+ 			}
+ 			if(i === 6){
+ 				oNavlist[0].className = 'active';
+ 			}else if(i===0){
+ 				oNavlist[4].className = 'active';
+ 			}else{
+ 				oNavlist[i-1].className = 'active';
+ 			}
+ 		}
+ 		//帖子切换
+ 		console.log(buttenlef[2]);
+ 		buttenlef[3].onclick = function(){
+ 			cblbt.style.left = "0";
+ 		};
+ 		buttenlef[2].onclick = function(){
+ 			cblbt.style.left = "-596px";
+ 		};
+ 		buttenlef[1].onclick = function(){
+ 			cblbt.style.left = "-1192px";
+ 		};
+ 		buttenr[3].onclick = function(){
+ 			cblbtr.style.left = "0";
+ 		};
+ 		buttenr[2].onclick = function(){
+ 			cblbtr.style.left = "-596px";
+ 		};
+ 		buttenr[1].onclick = function(){
+ 			cblbtr.style.left = "-1192px";
+ 		};
+	function getStyle(obj, attr){
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		} else {
+			return getComputedStyle(obj, null)[attr];
+		}
+	}
+	function animate(obj,json,callback){
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var isStop = true;
+			for(var attr in json){
+				var now = 0;
+				if(attr == 'opacity'){
+					now = parseInt(getStyle(obj,attr)*100);
+				}else{
+					now = parseInt(getStyle(obj,attr));
+				}
+				var speed = (json[attr] - now) / 8;
+				speed = speed>0?Math.ceil(speed):Math.floor(speed);
+				var cur = now + speed;
+				if(attr == 'opacity'){
+					obj.style[attr] = cur / 100;
+				}else{
+					obj.style[attr] = cur + 'px';
+				}
+				if(json[attr] !== cur){
+					isStop = false;
+				}
+			}
+			if(isStop){
+				clearInterval(obj.timer);
+				callback&&callback();
+			}
+		}, 30)
+	}
+	var ca=0,cb=0,cc=0,cd=0,ce=0,cf=0,cg=0,ch=0,ci=0,cj=0;
+	var cspan = document.getElementsByTagName("span");
+	var lists = document.getElementsByClassName("cbact");
+   	var ch2 = document.getElementsByTagName("h2");
+
+	var cArray = new Array(); //先声明一维
+		for(var ce=0;ce<lists.length;ce++){ 
+			cArray[ce]=new Array();
+			for(var cf=0;cf<3;cf++){ 
+			cArray[ce][cf]="0"; 
+	 	}
+	}
+	for(ca=0;ca<lists.length;ca++){
+		for(cb=0;cb<3;cb++){
+			console.log(cbact[ca].children[0].children[cb].children[0].children[1].innerHTML);
+			cbact[ca].children[0].children[cb].children[0].children[0].idx = ca;
+			cbact[ca].children[0].children[cb].children[0].children[0].idy = cb;
+			cbact[ca].children[0].children[cb].children[0].children[0].onclick = function(){
+					cc=cArray[this.idx][this.idy];
+					if (this.idy == 0) {
+						cbact[this.idx].children[0].children[this.idy].children[0].children[1].innerHTML=cc;
+					}else{
+						cc++;
+						cbact[this.idx].children[0].children[this.idy].children[0].children[1].innerHTML=cc;
+					}
+					cArray[this.idx][this.idy] = cc;
+					if((this.idy+1)%2==0){
+						alert("转发成功");
+					}
+
+				}
+			}
+		}
+		for(;cg<ch2.length;cg++){
+			ch2[cg].idx=cg;
+			ch2[cg].onclick = function(){
+				ch = cArray[this.idx][0];
+				ch++;
+				cbact[this.idx].children[0].children[0].children[0].children[1].innerHTML=ch;
+				cArray[this.idx][0] = ch;
+			}
+		}
+	</script>
+<!-- 	渲染效果，非原创代码 -->
+	<script>
+	(function(window,document,undefined){
+    var hearts = [];
+    window.requestAnimationFrame = (function(){
+        return window.requestAnimationFrame || 
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+         window.oRequestAnimationFrame ||
+         window.msRequestAnimationFrame ||
+         function (callback){
+             setTimeout(callback,1000/60);
+         }
+    })();
+    
+    init();
+
+    function init(){
+        css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+        attachEvent();
+        gameloop();
+    }
+
+    function gameloop(){
+        for(var i=0;i<hearts.length;i++){
+            if(hearts[i].alpha <=0){
+                document.body.removeChild(hearts[i].el);
+                hearts.splice(i,1);
+                continue;
+             }
+
+             hearts[i].y--;
+             hearts[i].scale += 0.004;a
+             hearts[i].alpha -= 0.013;
+             hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+        }
+
+        requestAnimationFrame(gameloop);
+    }
+
+    function attachEvent(){
+        var old = typeof window.onclick==="function" && window.onclick;
+        window.onclick = function(event){
+            old && old();
+            createHeart(event);
+        }
+    }
+
+    function createHeart(event){
+        var d = document.createElement("div");
+        d.className = "heart";
+        hearts.push({
+            el : d,
+            x : event.clientX - 5,
+            y : event.clientY - 5,
+            scale : 1,
+            alpha : 1,
+            color : randomColor()
+        });
+
+        document.body.appendChild(d);
+    }
+
+    function css(css){
+        var style = document.createElement("style");
+        style.type="text/css";
+        try{
+            style.appendChild(document.createTextNode(css));
+        }
+        catch(ex){
+            style.styleSheet.cssText = css;
+        }
+
+        document.getElementsByTagName('head')[0].appendChild(style);
+    }
+
+    function randomColor(){
+        return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+    }
+    
+})(window,document);
+	</script>
+</body>
+</html>
+

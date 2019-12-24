@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>汽车</title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+			font-family: "微软雅黑"；
+		}
+		input{
+			outline-style: none;
+		}
+		a{
+		text-decoration: none;
+		color: black;
+		}
+		ul{
+			list-style-type: none;
+		}
+		li{
+			display: inline-block;
+		}
+		/*主体框架*/
+		.top{
+			width: 100%;
+			height: 60px;
+			border-top: 5px solid  black;
+			position: fixed;
+			z-index: 2;
+		}
+		.logo{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			margin-left: 100px;
+			float: left;
+		}
+		.logo>img{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			float: left;
+		}
+		.find{
+			width: 550px;
+			height: 45px;
+			display: inline-block;
+			float: left;
+			margin-left: 120px;
+			margin-top: 8px;
+		}
+		.find input{
+			width: 550px;
+			height: 45px;
+			text-align: center;
+			font-size: 14.78px;
+			color: #d6d6d6;
+			border:2px solid rgb(50,50,50);
+			border-radius: 15px;
+		}
+		.fimg{
+			width: 60px;
+			height: 40px;
+			margin-left: -60px;
+			margin-top: 8px;
+			display: inline-block;
+		}
+		.fimg input{
+			width: 60px;
+			height: 38px;
+			margin-top: 3px;
+			background-image: url(img/search.png);
+			background-color: #ffffff;
+			background-repeat: no-repeat;
+			background-position:center;
+			border: none;
+			border-radius: 10px;
+		}
+		.topright{
+			width: 360px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			margin-right: 30px;
+			margin-top: 5px;
+			float: right;
+		}
+		.tr1{
+			width: 90px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr1:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr2{
+			width: 72px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr2:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr1>a>img{
+			margin-top: 10px;
+			height: 25px;
+			width: 25px;
+			float: left;
+		}
+		.backpage{
+			width: 100%;
+			height: 0px;
+		}
+		.main{
+			width: 100%;
+			height: 906px;
+			position: absolute;
+			top:100px;
+			left:0px;
+			overflow: hidden;
+		}
+		.k{
+			height: 66px;
+			z-index: 2;
+		}
+		#scroll{
+			margin-left: 200px;
+			height: 30px;
+			/*width: 1250px;*/
+			position: fixed;
+		}
+		#pra{
+			color: rgb(194,204,216);
+			width: 1000px;
+			overflow: hidden;
+			float: left;
+			margin-top: 15px;
+		}
+		#mouse{
+			width: 40px;
+			height: 40px;
+			float: left;
+		}
+		#time{
+			float: right;
+			margin-left: 100px;
+			border: 2px solid black;
+			border-radius: 10px;
+		}
+		#time>img{
+			width: 46px;
+			height: 46px;
+		}
+		#tim{
+			float: right;
+			font-size: 20px;
+			margin-top: 10px;
+		}
+		.left{
+			top: 120px;
+			border-radius: 10px;
+			display: inline-block;
+			position: fixed;
+		}
+		.nav{
+			height: 55px;
+			width: 150px;
+			margin:5px;
+			text-align: center;
+			line-height: 55px;
+			font-size: 20px;
+			background: rgba(50,50,50,0.8);
+			border-radius: 10px;
+			cursor: pointer;
+			overflow: hidden;
+		}
+		#nav{
+			margin-left: -120px;
+		}
+		#nav2{
+			margin-left: -120px;
+		}
+		#nav3{
+			margin-left: -120px;
+		}
+		#nav4{
+			margin-left: -120px;
+		}
+		#nav5{
+			margin-left: -120px;
+		}
+		#nav6{
+			margin-left: -120px;
+		}
+		.nav>a{
+		color: #ffffff;
+		}
+		#nav1{
+			margin-left: -20px;
+ 			border-radius: 10px;
+ 		}
+ 		.center{
+ 			position: absolute;
+ 			left:200px;
+ 			top: 0px;
+ 			width:1000px;
+ 			height: 1500px;
+ 			overflow: hidden;
+ 		}
+ 		.start{
+ 			border-radius: 15px;
+ 			border: 3px solid black;
+ 			position: fixed;
+ 			left: 300px;
+ 			top:150px;
+ 			height: 518px;
+ 			width: 800px;
+ 			overflow: hidden;
+ 			background-color: rgb(251,255,216);
+ 			opacity: 1;
+ 			z-index: 2;
+ 			cursor: pointer;
+ 		}
+ 		#cartoonCar{
+ 			float: left;
+ 			transform:scale(1.2);	
+ 		}
+ 		#cartoonText{
+ 			position: absolute;
+ 			right: 120px;
+ 			top:30px;
+ 			font-size: 35px;
+ 			font-family: 'YouYuan';
+ 		}
+ 		.lump{
+ 			width: 800px;
+ 			height: 200px;
+ 			margin: 20px 100px;
+ 			border:2px solid black;
+ 			border-radius: 15px;
+ 			float:left;
+ 			overflow: hidden;
+ 		}
+ 		.lump1{
+ 			width: 450px;
+ 			height: 450px;
+ 			margin-left: 100px;
+ 			border:2px solid black;
+ 			border-radius: 15px;
+ 			float:left;
+ 			position: relative;
+ 			overflow: hidden;
+ 		}
+ 		.bigImg{
+ 			width: 1000px;
+ 			height: 1000px;
+ 			position: absolute;
+ 			top: 0;
+ 			left: 0;
+ 			display: none;
+ 		}
+ 		.lunbo{
+ 			width: 1560px;
+ 			height: 450px;
+ 			position: absolute;
+ 			top: 0;
+ 			left: 0;
+ 		}
+ 		.lunbo1{
+ 			width: 1560px;
+ 			height: 450px;
+ 			position: absolute;
+ 			top: 0;
+ 			left: -510px;
+ 		}
+ 		.lun>img{
+ 			width: 780px;
+ 			height: 450px;
+ 			float: left;
+ 		}
+ 		.lun1>img{
+ 			width: 780px;
+ 			height: 450px;
+ 			float: left;
+ 		}
+ 		.lump2{
+ 			width: 270px;
+ 			height: 450px;
+ 			margin-left: 60px;
+ 			border:2px solid black;
+ 			border-radius: 15px;
+ 			float:left;
+ 			position: relative;
+ 			overflow: hidden;
+ 		}
+ 		.carText{
+ 			margin: 10px;
+ 			width: 250px;
+ 			height: 430px;
+ 			display: none;
+ 			text-align: center;
+ 		}
+ 		.neiRong{
+ 			opacity: 0;
+ 			height: 1600px;
+ 		}
+ 		.carT{
+ 			width:200px;
+ 			height:200px;
+ 			float: left;
+ 			position: relative;
+ 		}
+ 		.carImg{
+ 			width: 200px;
+ 			height: 200px;
+ 		}
+ 		.slider{
+ 			width: 100px;
+ 			height: 100px;
+ 			position:absolute;
+ 			left:0;
+ 			top:0;
+ 			background:#CCC;
+ 			opacity:0.4;
+ 			cursor: move;
+ 			display: none;
+ 			filter:alpha(opacity=40);
+ 		}
+ 		.right{
+ 			width: 300px;
+ 			height:300px;
+ 			position: fixed;
+ 			right: 50px;
+ 			top: 400px;
+ 			opacity: 0;
+ 		}
+ 		#bianQian{
+ 			width: 300px;
+ 			height: 300px;
+ 			position: absolute;
+ 			top: 0;
+ 			left: 0;
+ 		}
+ 		.tip{
+ 			margin-bottom: 10px;
+ 			float: left;
+ 		}
+ 		.tip:hover{
+ 			color:red;
+ 		}
+ 		#message{
+ 			width: 200px;
+ 			height: 200px;
+ 			position: absolute;
+ 			left: 50px;
+ 			top: 50px;
+ 			/*text-align: center;*/
+ 			line-height: 1.5em;
+       		font-family: "Times New Roman", Times, serif;
+			font-size: 16px;
+        	color: #000000;
+ 		}
+ 		.end>img{
+ 			width: 50px;
+ 			height: 50px;
+ 		}
+ 		.end>p{
+ 			position: absolute;
+ 			top: 9px;
+ 			left: 50px;
+ 			font-family:Arial,Helvetica,sans-serif;
+ 			font-size: 25px;
+ 			font-family: "Arial","MicrosoftYaHei","黑体","宋体",sans-serif;
+ 			color: orange;
+ 		}
+ 		.end{
+ 			width: 250px;
+ 			height: 50px;
+ 			border: 1.5px solid green;
+ 			border-radius: 15px;
+ 			position: fixed;
+ 			right: -200px;
+ 			top: 200px;
+ 			cursor: pointer;
+ 			overflow: hidden;
+ 		}
+ 		.bottom{
+ 			width:1000px;
+ 			height: 200px;
+ 			position: absolute;
+ 			left: 150px;
+ 			top: 700px;
+ 			opacity: 0;
+ 		}
+ 		.tuBiao{
+ 			width: 200px;
+ 			height: 200px;
+ 			float: left;
+ 			position: relative;
+ 		}
+ 		.tuBiao>img{
+ 			width: 150px;
+ 			height: 150px;
+ 			position: absolute;
+ 			left: 25px;
+ 			top: 25px;
+ 		}
+		/*分组实现*/
+		/*首页 by 田文秀*/
+	</style>
+</head>
+<!-- 主题架构 -->
+<body>
+	<div class="top" id="top" >
+		<div class="logo" id="logo">
+			<a href="web_homework.html"><img src="img/logo3.png" style="height: 60px;"></a>
+		</div>
+		<form>
+			<div class="find" id="find"><input type="text" name="find" value="发现新世界"></div>
+		    <div class="fimg" id="fimg"> <input type="submit" name="fimg" value="&nbsp"></div>
+			<div class="topright" id="toprigh">
+			<div class="tr1" id="tr1"><a href="web_homework.html"><img src="img/home.png">主&nbsp&nbsp页</a></div>
+			<div class="tr1" id="tr1"><a href="#"><img src="img/find.png">发&nbsp&nbsp现</a></div>
+			<div class="tr2" id="tr2"><a href="page/register.html" target="_blank">登&nbsp&nbsp录&nbsp&nbsp&nbsp</a>|</div>
+			<div class="tr1" id="tr1"><a href="#">注&nbsp&nbsp册</a></div>
+		</div>
+		</form>
+	</div>
+	<div class="k" id="k"></div>
+	<div class="backpage" id="backpage">
+		<div id="scroll">
+			<img src="img/s1.gif" id="mouse">
+			<div id = "pra">
+				<marquee behavior = "scroll" direction = "left" id ="marquee"></marquee>
+			</div>
+			<div id="time">
+				<img src="img/s2.gif">
+				<div id="tim">
+					<p id="paragraph"></p>
+				</div>
+			</div>
+		</div>
+		<div class="main" id="main">
+			<div class="left" id="left"> 
+				<div class="nav" id="nav3"><a  href="index.html">首&nbsp&nbsp&nbsp页</a></div>
+				<div class="nav" id="nav2" ><a href="delicious.html">美&nbsp&nbsp&nbsp食</a></div>
+				<div class="nav" id="nav1"><a href="car.html">汽&nbsp&nbsp&nbsp车</a></div>
+				<div class="nav" id="nav4" ><a href="beauty.html">美&nbsp&nbsp&nbsp妆</a></div>
+				<div class="nav" id="nav5"><a href="game.html">游&nbsp&nbsp&nbsp戏</a></div>
+				<div class="nav" id="nav6"><a href="computer.html">计&nbsp算&nbsp机</a></div>
+			</div>
+			<div class="center">
+				<div class="start">
+					<img src="img/cartoonCar.jpg" id="cartoonCar">
+					<p id="cartoonText"><br/>点<br/>击<br/>进<br/>入<br/>汽<br/>车<br/>世<br/>界</p>
+				</div>
+				<div class="neiRong">
+					<div class="lump">
+						<div class="carT"><img src="img/car1.png" class="carImg"><div class="slider"></div></div>
+						<div class="carT"><img src="img/car2.jpg" class="carImg"><div class="slider"></div></div>
+						<div class="carT"><img src="img/car3.png" class="carImg"><div class="slider"></div></div>
+						<div class="carT"><img src="img/car4.png" class="carImg"><div class="slider"></div></div>
+					</div>
+					<div class="lump1">
+						<img src="img\car1.png" class="bigImg">
+						<img src="img\car2.jpg" class="bigImg">
+						<img src="img\car3.png" class="bigImg">
+						<img src="img\car4.png" class="bigImg">
+						<div class="lunbo" >
+							<div class="lun"><img src="img/huoCheCar.png"></div>
+							<div class="lun"><img src="img/huoCheCar.png"></div>
+						</div>
+					</div>
+					<div class="lump2">
+						<div class="carText"><h1>奔驰G级AMG</h1><br/><p>凭借无可匹敌的全路况越野性能驰骋天地；以前所未见的震撼力量释放驾驭世界的渴望</p></div>
+						<div class="carText"><h1>哈雷</h1><br/><p>外形：前叉长，轴距长，坐高低，车把略高，看起来圆润！ 驾乘：舒服，安逸，长途不累，弯道不是很给力（因为轴距长）！ 速度：不快不慢，定位为巡航速！ 骑士：粗线条型，肌肉型，沧桑型的男人，让人感觉骑上去都很COOL！比较吸引眼球</p></div>
+						<div class="carText"><h1>悍马h1</h1><br/><p>车身采用铝合金、钢材、玻璃纤维，主要作用是在不平坦道路上保持高度稳定性。虽然是6,500cc容积设计，但耗油较少；通用动力设计V形八汽缸6.5公升柴油引擎，能发出170匹马力及惊人的40.1kgm扭力。尚有6.5公升涡轮增压柴油引擎，能发出190匹马力及更为高的53.3kgm扭力，其拖曳能力更在四吨以上。两副引擎皆为电子喷注式设计，能提供稳妥及畅顺的动力输出。</p></div>
+						<div class="carText"><h1>大运三轮</h1><br/><br/><br/><p>物美价廉</p></div>
+						<div class="lunbo1" >
+							<div class="lun1"><img src="img/huoCheCar.png"></div>
+							<div class="lun1"><img src="img/huoCheCar.png"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<div class="end">
+					<img src="img\endCar.gif"><p>点击离开汽车世界</p>
+				</div>
+				<img src="img\bianQianCar.jpg" id='bianQian'>
+				<div id="message">
+					<a href="http://baijiahao.baidu.com/s?id=1650284080158198217&wfr=spider&for=pc" target="_blank" class="tip">威马汽车最新消息发布柴油加热电动车</a><br>
+					<a href="https://auto.china.com/new/12872.html" target="_blank" class="tip">红旗E115概念车最新消息</a><br>
+					<a href="http://baijiahao.baidu.com/s?id=1644368435071531984&wfr=spider&for=pc" target="_blank" class="tip">无人驾驶汽车最新消息</a>
+					<a href="https://www.autohome.com.cn/news/201908/941925.html" target="_blank" class="tip">搭载2.0T+8AT 汉龙汽车最新消息曝光</a><br>
+					<a href="http://www.zgqczj.com/" target="_blank" class="tip">...</a>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="tuBiao"><img src="img\tuBiaoCar1.png" class="tuCar"></div>
+				<div class="tuBiao"><img src="img\tuBiaoCar2.png" class="tuCar"></div>
+				<div class="tuBiao"><img src="img\tuBiaoCar3.png" class="tuCar"></div>
+				<div class="tuBiao"><img src="img\tuBiaoCar4.png" class="tuCar"></div>
+				<div class="tuBiao"><img src="img\tuBiaoCar5.png" class="tuCar"></div>
+			</div>
+		</div>
+	</div>
+
+		
+	<!-- 分组实现 -->
+	<!-- 首页 by 田文秀 -->
+	<script type="text/javascript">
+		// 主体框架
+		function getStyle(obj,style) {  
+	    	if(obj.currentStyle){  
+	    		return obj.currentStyle[style];  
+	    	} 
+	    	else 
+	    	{  
+	    		return getComputedStyle(obj)[style];
+	    	}  
+	    }
+		var input = document.getElementsByTagName('input')[0];
+		var left = document.getElementById('left');
+		var nav2 = document.getElementById('nav2');
+		var nav3 = document.getElementById('nav3');
+		var nav4 = document.getElementById('nav4');
+		var nav5 = document.getElementById('nav5');
+		var nav6 = document.getElementById('nav6');
+		var marquee = document.getElementById('marquee');
+		var paragraph = document.getElementById('paragraph');
+		var now = new Date();
+		var day = 32;
+		input.onclick = function () {
+			input.value = " ";
+		}
+		input.onblur = function(){
+			input.value = "发现新世界";
+		}
+		nav2.onmouseout = function(){
+			nav2.style.marginLeft= '-120px';
+		}
+		nav2.onmouseover = function(){
+			nav2.style.marginLeft = '-20px';
+		}
+		nav3.onmouseout = function(){
+			nav3.style.marginLeft = '-120px';
+		}
+		nav3.onmouseover = function(){
+			nav3.style.marginLeft = '-20px';
+		}
+		nav4.onmouseout = function(){
+			nav4.style.marginLeft= '-120px';
+		}
+		nav4.onmouseover = function(){
+			nav4.style.marginLeft = '-20px';
+		}
+		nav5.onmouseout = function(){
+			nav5.style.marginLeft = '-120px';
+		}
+		nav5.onmouseover = function(){
+			nav5.style.marginLeft = '-20px';
+		}
+		nav6.onmouseout = function(){
+			nav6.style.marginLeft= '-120px';
+		}
+		nav6.onmouseover = function(){
+			nav6.style.marginLeft = '-20px';
+		}
+		function getTime(){
+			var date = new Date();
+			var hour = date.getHours();
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+			var hour1 = hour<10?'0' + hour :hour;
+			var minute1 = minute<10?'0' + minute :minute;
+			var second1 = second<10?'0' + second :second;
+			paragraph.innerHTML = hour1 + "：" + minute1 + "："+ second1;
+		}
+		getTime();
+		setInterval(getTime,1000);
+		function scroll(){
+			var date1 = new Date();
+			var year = date1.getFullYear();
+			if(year == 2019){
+				marquee.innerHTML = "距 离 2020 年 仅 剩 " + (day-now.getDate()) + " 天 ! ! ! ";
+			}
+			else{
+				marquee.innerHTML = "今 天 也 是 活 力 满 满 的 一 天 ！ 加 油 ！ 奥 利 给 ！";
+			}
+		}
+		scroll();
+
+		//汽车界面 周官玺
+		var start = document.getElementsByClassName('start')[0];
+		var neiRong = document.getElementsByClassName('neiRong')[0];
+		var right = document.getElementsByClassName('right')[0];
+		var times = 0;
+		var carImg1 = document.getElementsByClassName('carT')[0];
+		var carImg2 = document.getElementsByClassName('carT')[1];
+		var carImg3 = document.getElementsByClassName('carT')[2];
+		var carImg4 = document.getElementsByClassName('carT')[3];
+		var bigImg1 = document.getElementsByClassName('bigImg')[0];
+		var bigImg2 = document.getElementsByClassName('bigImg')[1];
+		var bigImg3 = document.getElementsByClassName('bigImg')[2];
+		var bigImg4 = document.getElementsByClassName('bigImg')[3];
+		var slider1 = document.getElementsByClassName('slider')[0];
+		var slider2 = document.getElementsByClassName('slider')[1];
+		var slider3 = document.getElementsByClassName('slider')[2];
+		var slider4 = document.getElementsByClassName('slider')[3];
+		var carText1 = document.getElementsByClassName('carText')[0];
+		var carText2 = document.getElementsByClassName('carText')[1];
+		var carText3 = document.getElementsByClassName('carText')[2];
+		var carText4 = document.getElementsByClassName('carText')[3];
+		var end = document.getElementsByClassName('end')[0];
+		var bottom = document.getElementsByClassName('bottom')[0];
+		var endOut;
+		var endIn;
+		var startOut;
+		var startIn;
+		var lunbo = document.getElementsByClassName('lunbo')[0];
+		var lunbo1 = document.getElementsByClassName('lunbo1')[0];
+		var tuCar1 = document.getElementsByClassName('tuCar')[0];
+		var tuCar2 = document.getElementsByClassName('tuCar')[1];
+		var tuCar3 = document.getElementsByClassName('tuCar')[2];
+		var tuCar4 = document.getElementsByClassName('tuCar')[3];
+		var tuCar5 = document.getElementsByClassName('tuCar')[4];
+		var tuCarBig1,tuCarSmall1,tuCarBig2,tuCarSmall2,tuCarBig3,tuCarSmall3,tuCarBig4,tuCarSmall4,tuCarBig5,tuCarSmall5;
+		tuCar1.onmouseover = function(){
+			clearInterval(tuCarSmall1);
+			tuCarBig1 = setInterval(function(){
+				var a = parseFloat(getStyle(tuCar1,'top'));
+				var b = parseFloat(getStyle(tuCar1,'height'));
+				var c = parseFloat(getStyle(tuCar1,'left'));
+				var d = parseFloat(getStyle(tuCar1,'width'));
+				if(a == 0){
+					clearInterval(tuCarBig1);
+				}
+				else{
+					tuCar1.style.top = a-1+'px';
+					tuCar1.style.height = b+2+'px';
+					tuCar1.style.left = c-1+'px';
+					tuCar1.style.width  = d+2+'px';
+				}
+			});
+		}
+		tuCar1.onmouseout = function(){
+			clearInterval(tuCarBig1);
+			tuCarSmall1 = setInterval(function(){
+				var a = parseFloat(getStyle(tuCar1,'top'));
+				var b = parseFloat(getStyle(tuCar1,'height'));
+				var c = parseFloat(getStyle(tuCar1,'left'));
+				var d = parseFloat(getStyle(tuCar1,'width'));
+				if(a == 25){
+					clearInterval(tuCarBig1);
+				}
+				else{
+					tuCar1.style.top = a+1+'px';
+					tuCar1.style.height = b-2+'px';
+					tuCar1.style.left = c+1+'px';
+					tuCar1.style.width  = d-2+'px';
+				}
+			})
+		}
+		tuCar2.onmouseover = function(){
+			clearInterval(tuCarSmall2);
+			tuCarBig2 = setInterval(function(){
+				var a = parseFloat(getStyle(tuCar2,'top'));
+				var b = parseFloat(getStyle(tuCar2,'height'));
+				var c = parseFloat(getStyle(tuCar2,'left'));
+				var d = parseFloat(getStyle(tuCar2,'width'));
+				if(a == 0){
+					clearInterval(tuCarBig2);
+				}
+				else{
+					tuCar2.style.top = a-1+'px';
+					tuCar2.style.height = b+2+'px';
+					tuCar2.style.left = c-1+'px';
+					tuCar2.style.width  = d+2+'px';
+				}
+			});
+		}
+		tuCar2.onmouseout = function(){
+			clearInterval(tuCarBig2);
+			tuCarSmall2 = setInterval(function(){
+				var a = parseFloat(getStyle(tuCar2,'top'));
+				var b = parseFloat(getStyle(tuCar2,'height'));
+				var c = parseFloat(getStyle(tuCar2,'left'));
+				var d = parseFloat(getStyle(tuCar2,'width'));
+				if(a == 25){
+					clearInterval(tuCarBig2);
+				}
+				else{
+					tuCar2.style.top = a+1+'px';
+					tuCar2.style.height = b-2+'px';
+					tuCar2.style.left = c+1+'px';
+					tuCar2.style.width  = d-2+'px';
+				}
+			})
+		}
+		tuCar3.onmouseover = function(){
+			clearInterval(tuCarSmall3);
+			tuCarBig3 = setInterval(function(){
+				var a = parseFloat(getStyle(tuCar3,'top'));
+				var b = parseFloat(getStyle(tuCar3,'height'));
+				var c = parseFloat(getStyle(tuCar3,'left'));
+				var d = parseFloat(getStyle(tuCar3,'width'));
+				if(a == 0){
+					clearInterval(tuCarBig3);
+				}
+				else{
+					tuCar3.style.top = a-1+'px';
+					tuCar3.style.height = b+2+'px';
+					tuCar3.style.left = c-1+'px';
+					tuCar3.style.width  = d+2+'px';
+				}
+			});
+		}
+		tuCar3.onmouseout = function(){
+			clearInterval(tuCarBig3);
+			tuCarSmall3 = setInterval(function(){
+				var a = parseFloat(getStyle(tuCar3,'top'));
+				var b = parseFloat(getStyle(tuCar3,'height'));
+				var c = parseFloat(getStyle(tuCar3,'left'));
+				var d = parseFloat(getStyle(tuCar3,'width'));
+				if(a == 25){
+					clearInterval(tuCarBig3);
+				}
+				else{
+					tuCar3.style.top = a+1+'px';
+					tuCar3.style.height = b-2+'px';
+					tuCar3.style.left = c+1+'px';
+					tuCar3.style.width  = d-2+'px';
+				}
+			})
+		}
+		tuCar4.onmouseover = function(){
+			clearInterval(tuCarSmall4);
+			tuCarBig4 = setInterval(function(){
+				var a = parseFloat(getStyle(tuCar4,'top'));
+				var b = parseFloat(getStyle(tuCar4,'height'));
+				var c = parseFloat(getStyle(tuCar4,'left'));
+				var d = parseFloat(getStyle(tuCar4,'width'));
+				if(a == 0){
+					clearInterval(tuCarBig4);
+				}
+				else{
+					tuCar4.style.top = a-1+'px';
+					tuCar4.style.height = b+2+'px';
+					tuCar4.style.left = c-1+'px';
+					tuCar4.style.width  = d+2+'px';
+				}
+			});
+		}
+		tuCar4.onmouseout = function(){
+			clearInterval(tuCarBig4);
+			tuCarSmall4 = setInterval(function(){
+				var a = parseFloat(getStyle(tuCar4,'top'));
+				var b = parseFloat(getStyle(tuCar4,'height'));
+				var c = parseFloat(getStyle(tuCar4,'left'));
+				var d = parseFloat(getStyle(tuCar4,'width'));
+				if(a == 25){
+					clearInterval(tuCarBig4);
+				}
+				else{
+					tuCar4.style.top = a+1+'px';
+					tuCar4.style.height = b-2+'px';
+					tuCar4.style.left = c+1+'px';
+					tuCar4.style.width  = d-2+'px';
+				}
+			})
+		}
+		tuCar5.onmouseover = function(){
+			clearInterval(tuCarSmall5);
+			tuCarBig5 = setInterval(function(){
+				var a = parseFloat(getStyle(tuCar5,'top'));
+				var b = parseFloat(getStyle(tuCar5,'height'));
+				var c = parseFloat(getStyle(tuCar5,'left'));
+				var d = parseFloat(getStyle(tuCar5,'width'));
+				if(a == 0){
+					clearInterval(tuCarBig5);
+				}
+				else{
+					tuCar5.style.top = a-1+'px';
+					tuCar5.style.height = b+2+'px';
+					tuCar5.style.left = c-1+'px';
+					tuCar5.style.width  = d+2+'px';
+				}
+			});
+		}
+		tuCar5.onmouseout = function(){
+			clearInterval(tuCarBig5);
+			tuCarSmall5 = setInterval(function(){
+				var a = parseFloat(getStyle(tuCar5,'top'));
+				var b = parseFloat(getStyle(tuCar5,'height'));
+				var c = parseFloat(getStyle(tuCar5,'left'));
+				var d = parseFloat(getStyle(tuCar5,'width'));
+				if(a == 25){
+					clearInterval(tuCarBig5);
+				}
+				else{
+					tuCar5.style.top = a+1+'px';
+					tuCar5.style.height = b-2+'px';
+					tuCar5.style.left = c+1+'px';
+					tuCar5.style.width  = d-2+'px';
+				}
+			})
+		}
+		function next(){
+			animate(lunbo,{left:-780},function(){
+				lunbo.style.left = '0px';
+			});
+		}
+		setInterval(next,2000);
+		function nextt(){
+			animate(lunbo1,{left:-1290},function(){
+				lunbo1.style.left = '-510px';
+			});
+		}
+		setInterval(nextt,2000)
+		end.onmouseover = function(){
+			clearInterval(endIn);
+			endOut = setInterval(function(){
+				var a = parseFloat(getStyle(end,'right'));
+				if(a == 0){
+					clearInterval(endOut);
+				}
+				else{
+					end.style.right = a + 10 + 'px';
+				}
+			},50);
+		}
+		end.onmouseout = function(){
+			clearInterval(endOut);
+			endIn = setInterval(function(){
+				var a = parseFloat(getStyle(end,'right'));
+				if(a == -200){
+					clearInterval(endIn);
+				}
+				else{
+					end.style.right = a - 10 + 'px';
+				}
+			},50)
+		}
+		end.onclick = function(){
+			clearInterval(startIn);
+			times = 0;
+			start.style.left = 1000+'px';
+			startOut = setInterval(function(){
+				//界面渐淡效果
+				var s = times*0.01;
+				var b = parseFloat(getStyle(neiRong,'opacity'));
+				var d = parseFloat(getStyle(right,'opacity'));
+				var bo = parseFloat(getStyle(bottom,'opacity'));
+				
+				neiRong.style.opacity = b - s;
+				right.style.opacity = d - s;
+				bottom.style.opacity = bo - s;
+				times++;
+
+				//移动效果
+				var now = parseInt(getStyle(start,'left'));
+				var speed = Math.ceil((now-300)/5);
+				speed = speed>0?Math.ceil(speed):Math.floor(speed);
+				if(now == 300){
+					clearInterval(startOut);
+				}
+				else{
+					start.style.left = now - speed +'px';
+				}
+				//渐出效果
+				var a = parseFloat(getStyle(start,'opacity'));
+				start.style.opacity  = a + s;
+			},50);
+		}
+		start.onclick = function(){
+			clearInterval(startOut);
+			times = 0;
+			startIn = setInterval(function(){
+				//移动效果
+				var now = parseInt(getStyle(start,'left'));
+				var speed = Math.ceil((now-(-820))/5);
+				speed = speed>0?Math.ceil(speed):Math.floor(speed);
+				if(now == (-820)){
+					clearInterval(startIn);
+				}
+				else{
+					start.style.left = now - speed +'px';
+				}
+				//渐淡效果
+				var a = parseFloat(getStyle(start,'opacity'));
+				var s = times*0.01;
+				start.style.opacity  = a - s;
+				if(a<=-1){
+					clearInterval(startIn);
+				}
+				
+				//内容渐出效果
+				var b = parseFloat(getStyle(neiRong,'opacity'));
+				var d = parseFloat(getStyle(right,'opacity'));
+				var bo = parseFloat(getStyle(bottom,'opacity'));
+				bottom.style.opacity = bo + s;
+				neiRong.style.opacity = b + s;
+				right.style.opacity = d + s;
+				times++;
+			},50);
+			setTimeout('start.style.opacity=0',1471);
+		}
+		carImg1.onmouseover = function(){
+			slider1.style.display = 'block';
+			bigImg1.style.display = 'block';
+			carText1.style.display = 'block';
+			lunbo.style.display = 'none';
+			lunbo1.style.display = 'none';
+		}
+		carImg1.onmouseout = function(){
+			slider1.style.display = 'none';
+			bigImg1.style.display = 'none';
+			carText1.style.display = 'none';
+			lunbo.style.display = 'block';
+			lunbo1.style.display = 'block';
+		}
+		carImg1.onmousemove = function(ev){
+   			var rectObject = carImg1.getBoundingClientRect();
+   			var ol = ev.clientX - parseInt(rectObject.left);
+   			var ot = ev.clientY - parseInt(rectObject.top);;
+ 	  	    ol = ol>150?100:ol<50?0:(ol-50);
+      		ot = ot>150?100:ot<50?0:(ot-50);
+      	 	slider1.style.left = ol+'px';
+      	 	slider1.style.top = ot + 'px';
+     	    bigImg1.style.left = (-ol)*5+'px';
+    	    bigImg1.style.top = (-ot)*5+'px';
+		}
+
+		carImg2.onmouseover = function(){
+			slider2.style.display = 'block';
+			bigImg2.style.display = 'block';
+			carText2.style.display = 'block';
+			lunbo.style.display = 'none';
+			lunbo1.style.display = 'none';
+		}
+		carImg2.onmouseout = function(){
+			slider2.style.display = 'none';
+			bigImg2.style.display = 'none';
+			carText2.style.display = 'none';
+			lunbo.style.display = 'block';
+			lunbo1.style.display = 'block';
+		}
+		carImg2.onmousemove = function(ev){
+   			var rectObject = carImg2.getBoundingClientRect();
+   			var ol = ev.clientX - parseInt(rectObject.left);
+   			var ot = ev.clientY - parseInt(rectObject.top);;
+ 	  	    ol = ol>150?100:ol<50?0:(ol-50);
+      		ot = ot>150?100:ot<50?0:(ot-50);
+      	 	slider2.style.left = ol+'px';
+      	 	slider2.style.top = ot + 'px';
+     	    bigImg2.style.left = (-ol)*5+'px';
+    	    bigImg2.style.top = (-ot)*5+'px';
+		}
+
+		carImg3.onmouseover = function(){
+			slider3.style.display = 'block';
+			bigImg3.style.display = 'block';
+			carText3.style.display = 'block';
+			lunbo.style.display = 'none';
+			lunbo1.style.display = 'none';
+		}
+		carImg3.onmouseout = function(){
+			slider3.style.display = 'none';
+			bigImg3.style.display = 'none';
+			carText3.style.display = 'none';
+			lunbo.style.display = 'block';
+			lunbo1.style.display = 'block';
+		}
+		carImg3.onmousemove = function(ev){
+   			var rectObject = carImg3.getBoundingClientRect();
+   			var ol = ev.clientX - parseInt(rectObject.left);
+   			var ot = ev.clientY - parseInt(rectObject.top);;
+ 	  	    ol = ol>150?100:ol<50?0:(ol-50);
+      		ot = ot>150?100:ot<50?0:(ot-50);
+      	 	slider3.style.left = ol+'px';
+      	 	slider3.style.top = ot + 'px';
+     	    bigImg3.style.left = (-ol)*5+'px';
+    	    bigImg3.style.top = (-ot)*5+'px';
+		}
+
+		carImg4.onmouseover = function(){
+			slider4.style.display = 'block';
+			bigImg4.style.display = 'block';
+			carText4.style.display = 'block';
+			lunbo.style.display = 'none';
+			lunbo1.style.display = 'none';
+		}
+		carImg4.onmouseout = function(){
+			slider4.style.display = 'none';
+			bigImg4.style.display = 'none';
+			carText4.style.display = 'none';
+			lunbo.style.display = 'block';
+			lunbo1.style.display = 'block';
+		}
+		carImg4.onmousemove = function(ev){
+   			var rectObject = carImg4.getBoundingClientRect();
+   			var ol = ev.clientX - parseInt(rectObject.left);
+   			var ot = ev.clientY - parseInt(rectObject.top);;
+ 	  	    ol = ol>150?100:ol<50?0:(ol-50);
+      		ot = ot>150?100:ot<50?0:(ot-50);
+      	 	slider4.style.left = ol+'px';
+      	 	slider4.style.top = ot + 'px';
+     	    bigImg4.style.left = (-ol)*5+'px';
+    	    bigImg4.style.top = (-ot)*5+'px';
+		}
+		function animate(obj,json,callback){
+			clearInterval(obj.timer);
+			obj.timer = setInterval(function(){
+				var isStop = true;
+				for(var attr in json){
+					var now = 0;
+					if(attr == 'opacity'){
+						now = parseInt(getStyle(obj,attr)*100);
+					}else{
+						now = parseInt(getStyle(obj,attr));
+					}
+					var speed = (json[attr] - now) / 8;
+					speed = speed>0?Math.ceil(speed):Math.floor(speed);
+					var cur = now + speed;
+					if(attr == 'opacity'){
+						obj.style[attr] = cur / 100;
+					}else{
+						obj.style[attr] = cur + "px";
+					}
+					if(json[attr] !== cur){
+						isStop = false;
+					}
+				}
+				if(isStop){
+					clearInterval(obj.timer);
+					callback&&callback();
+				}
+			}, 30)
+		}
+	</script>
+</body>
+</html>

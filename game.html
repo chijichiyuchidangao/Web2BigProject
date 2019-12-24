@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+			font-family: "微软雅黑"；
+		}
+		input{
+			outline-style: none;
+		}
+		a{
+		text-decoration: none;
+		color: black;
+		}
+		ul{
+			list-style-type: none;
+		}
+		li{
+			display: inline-block;
+		}
+		/*主体框架*/
+		.top{
+			width: 100%;
+			height: 60px;
+			border-top: 5px solid  black;
+			position: fixed;
+			z-index: 2px;
+		}
+		.logo{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			margin-left: 100px;
+			float: left;
+		}
+		.logo>img{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			float: left;
+		}
+		.find{
+			width: 550px;
+			height: 45px;
+			display: inline-block;
+			float: left;
+			margin-left: 120px;
+			margin-top: 8px;
+		}
+		.find input{
+			width: 550px;
+			height: 45px;
+			text-align: center;
+			font-size: 14.78px;
+			color: #d6d6d6;
+			border:2px solid rgb(50,50,50);
+			border-radius: 15px;
+		}
+		.fimg{
+			width: 60px;
+			height: 40px;
+			margin-left: -60px;
+			margin-top: 8px;
+			display: inline-block;
+		}
+		.fimg input{
+			width: 60px;
+			height: 38px;
+			margin-top: 3px;
+			background-image: url(img/search.png);
+			background-color: #ffffff;
+			background-repeat: no-repeat;
+			background-position:center;
+			border: none;
+			border-radius: 10px;
+		}
+		.topright{
+			width: 360px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			margin-right: 30px;
+			margin-top: 5px;
+			float: right;
+		}
+		.tr1{
+			width: 90px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr1:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr2{
+			width: 72px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr2:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr1>a>img{
+			margin-top: 10px;
+			height: 25px;
+			width: 25px;
+			float: left;
+		}
+		.backpage{
+			width: 100%;
+		}
+		.main{
+			height: 700px;
+			margin: 0px auto;
+		}
+		.k{
+			height: 66px;
+		}
+		#scroll{
+			margin-left: 200px;
+			height: 30px;
+			/*width: 1250px;*/
+			position: fixed;
+		}
+		#pra{
+			color: rgb(194,204,216);
+			width: 1000px;
+			overflow: hidden;
+			float: left;
+			margin-top: 15px;
+		}
+		#mouse{
+			width: 40px;
+			height: 40px;
+			float: left;
+		}
+		#time{
+			float: right;
+			margin-left: 100px;
+			border: 2px solid black;
+			border-radius: 10px;
+		}
+		#time>img{
+			width: 46px;
+			height: 46px;
+		}
+		#tim{
+			float: right;
+			font-size: 20px;
+			margin-top: 10px;
+		}
+		.left{
+			top: 120px;
+			border-radius: 10px;
+			display: inline-block;
+			position: fixed;
+		}
+		.nav{
+			height: 55px;
+			width: 150px;
+			margin:5px;
+			text-align: center;
+			line-height: 55px;
+			font-size: 20px;
+			background: rgba(50,50,50,0.8);
+			border-radius: 10px;
+			cursor: pointer;
+			overflow: hidden;
+		}
+		#nav{
+			margin-left: -120px;
+		}
+		#nav2{
+			margin-left: -120px;
+		}
+		#nav3{
+			margin-left: -120px;
+		}
+		#nav4{
+			margin-left: -120px;
+		}
+		#nav5{
+			margin-left: -120px;
+		}
+		#nav6{
+			margin-left: -120px;
+		}
+		.nav>a{
+		color: #ffffff;
+		}
+		#nav1{
+			margin-left: -20px;
+ 			border-radius: 10px;
+ 		}
+		/*分组实现*/
+		/*首页 by 田文秀*/
+		.container{
+			width: 800px;
+			height: 600px;
+			position:fixed;
+			top:160px;
+			left: 500px;
+		}
+	</style>
+	<link href="gameCss.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- 主题架构 -->
+<body>
+	<div class="top" id="top" >
+		<div class="logo" id="logo">
+			<a href="web_homework.html"><img src="img/logo3.png" style="height: 60px;"></a>
+		</div>
+		<form>
+			<div class="find" id="find"><input type="text" name="find" value="发现新世界"></div>
+		    <div class="fimg" id="fimg"> <input type="submit" name="fimg" value="&nbsp"></div>
+		<div class="topright" id="toprigh">
+			<div class="tr1" id="tr1"><a href="web_homework.html"><img src="img/home.png">主&nbsp&nbsp页</a></div>
+			<div class="tr1" id="tr1"><a href="#"><img src="img/find.png">发&nbsp&nbsp现</a></div>
+			<div class="tr2" id="tr2"><a href="page/register.html" target="_blank">登&nbsp&nbsp录&nbsp&nbsp&nbsp</a>|</div>
+			<div class="tr1" id="tr1"><a href="#">注&nbsp&nbsp册</a></div>
+		</div>
+		</form>
+	</div>
+	<div class="k" id="k"></div>
+	<div class="backpage" id="backpage">
+		<div id="scroll">
+			<img src="img/s1.gif" id="mouse">
+			<div id = "pra">
+				<marquee behavior = "scroll" direction = "left" id ="marquee"></marquee>
+			</div>
+			<div id="time">
+				<img src="img/s2.gif">
+				<div id="tim">
+					<p id="paragraph"></p>
+				</div>
+			</div>
+		</div>
+		<div class="main" id="main">
+			<div class="left" id="left">
+				<div class="nav" id="nav1"><a  href="web_homework.html">首&nbsp&nbsp&nbsp页</a></div>
+				<div class="nav" id="nav2" ><a href="#">美&nbsp&nbsp&nbsp食</a></div>
+				<div class="nav" id="nav3"><a href="#">汽&nbsp&nbsp&nbsp车</a></div>
+				<div class="nav" id="nav4" ><a href="#">美&nbsp&nbsp&nbsp妆</a></div>
+				<div class="nav" id="nav5"><a href="#">游&nbsp&nbsp&nbsp戏</a></div>
+				<div class="nav" id="nav6"><a href="#">计&nbsp算&nbsp机</a></div>
+			</div>
+			<div class="container" id="container">
+				<div class="square" id="square">
+			        <div class="line">
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			        </div>
+			        <div class="line">
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			        </div>
+			        <div class="line">
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			        </div>
+			        <div class="line">
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			        </div>
+			        <div class="line">
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			        </div>
+			        <div class="line">
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			        </div>
+			        <div class="line">
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			        </div>
+			        <div class="line">
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			        </div>
+			        <div class="line">
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			        </div>
+			        <div class="line">
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			            <div class="cell"></div>
+			        </div>
+    			</div>
+			</div>
+		</div>
+	</div>
+	<!-- 分组实现 -->
+	<!-- 首页 by 田文秀 -->
+	<script type="text/javascript">
+		// 主体框架
+		function getStyle(obj,style) {  
+	    	if(obj.currentStyle){  
+	    		return obj.currentStyle[style];  
+	    	} 
+	    	else 
+	    	{  
+	    		return getComputedStyle(obj)[style];
+	    	}  
+	    }
+		var input = document.getElementsByTagName('input')[0];
+		var left = document.getElementById('left');
+		var nav2 = document.getElementById('nav2');
+		var nav3 = document.getElementById('nav3');
+		var nav4 = document.getElementById('nav4');
+		var nav5 = document.getElementById('nav5');
+		var nav6 = document.getElementById('nav6');
+		var marquee = document.getElementById('marquee');
+		var paragraph = document.getElementById('paragraph');
+		var now = new Date();
+		var day = 32;
+		input.onclick = function () {
+			input.value = " ";
+		}
+		input.onblur = function(){
+			input.value = "发现新世界";
+		}
+		nav2.onmouseout = function(){
+			nav2.style.marginLeft= '-120px';
+		}
+		nav2.onmouseover = function(){
+			nav2.style.marginLeft = '-20px';
+		}
+		nav3.onmouseout = function(){
+			nav3.style.marginLeft = '-120px';
+		}
+		nav3.onmouseover = function(){
+			nav3.style.marginLeft = '-20px';
+		}
+		nav4.onmouseout = function(){
+			nav4.style.marginLeft= '-120px';
+		}
+		nav4.onmouseover = function(){
+			nav4.style.marginLeft = '-20px';
+		}
+		nav5.onmouseout = function(){
+			nav5.style.marginLeft = '-120px';
+		}
+		nav5.onmouseover = function(){
+			nav5.style.marginLeft = '-20px';
+		}
+		nav6.onmouseout = function(){
+			nav6.style.marginLeft= '-120px';
+		}
+		nav6.onmouseover = function(){
+			nav6.style.marginLeft = '-20px';
+		}
+		function getTime(){
+			var date = new Date();
+			var hour = date.getHours();
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+			var hour1 = hour<10?'0' + hour :hour;
+			var minute1 = minute<10?'0' + minute :minute;
+			var second1 = second<10?'0' + second :second;
+			paragraph.innerHTML = hour1 + "：" + minute1 + "："+ second1;
+		}
+		getTime();
+		setInterval(getTime,1000);
+		function scroll(){
+			var date1 = new Date();
+			var year = date1.getFullYear();
+			if(year == 2019){
+				marquee.innerHTML = "距 离 2020 年 仅 剩 " + (day-now.getDate()) + " 天 ! ! ! ";
+			}
+			else{
+				marquee.innerHTML = "今 天 也 是 活 力 满 满 的 一 天 ！ 加 油 ！ 奥 利 给 ！";
+			}
+		}
+		scroll();
+
+		var square = document.getElementById('square');
+        var meatX = Math.floor(Math.random()*10);
+        var meatY = Math.floor(Math.random()*10);
+        var meat = square.children[meatX].children[meatY];
+        meat.innerHTML = '<div class="meat"></div>';
+        var snakeX = Math.floor(Math.random()*10);
+        var snakeY = Math.floor(Math.random()*10);
+        var snakeArray = [{x:snakeX,y:snakeY}];
+        snakeArray.forEach(function(item, index) {
+            snake = square.children[item.x].children[item.y];
+            if (index === 0) {
+                snake.innerHTML = '<div class="snake-head"></div>';
+            }else {
+                snake.innerHTML = '<div class="snake-body"></div>';
+            }
+        });
+        var arrow;
+        function move (){
+            if (arrow === "ArrowUp" || arrow === 'w') {
+                var snakeArray1 = [];
+                snakeArray.forEach(function(item,index){
+                if (index === 0) {
+                    if (snakeArray[index].x - 1<0) {
+                            alert("游戏结束");
+                            clearInterval(time);
+                            window.location.reload();
+                        }else{
+                            snakeArray1.push({
+                                x:snakeArray[index].x - 1,
+                                y:snakeArray[index].y
+                            });
+                        }
+                }else{
+                    snakeArray1.push({
+                        x:snakeArray[index-1].x,
+                        y:snakeArray[index-1].y
+                    });
+                }
+                });
+                snakeArray = snakeArray1;
+                if (snakeArray[0].x === meatX && snakeArray[0].y === meatY) {
+                    meatX = Math.floor(Math.random()*10);
+                    meatY = Math.floor(Math.random()*10);
+                    var isEmpty = true;
+                    while(true){
+                        snakeArray.forEach(function(item, index) {
+                            if (item.x==meatX&&item.y==meatY) {
+                                isEmpty = false;
+                                meatX = Math.floor(Math.random()*10);
+                                meatY = Math.floor(Math.random()*10);
+                            }
+                        });
+                        if (isEmpty) {
+                            meat = square.children[meatX].children[meatY];
+                            meat.innerHTML = '<div class="meat"></div>';
+                            break;
+                        }else{
+                            isEmpty = true;
+                            continue;
+                        }
+                    }
+                    if (snakeArray.length==1) {
+                        var firNode = snakeArray[0];
+                        snakeArray.push({
+                            x:firNode.x + 1,
+                            y:firNode.y
+                        });
+                    }else if (snakeArray.length==2) {
+                        var secNode = snakeArray[1];
+                        snakeArray.push({
+                            x:secNode.x + 1,
+                            y:secNode.y
+                        });
+                    }else {
+                        var firNode = snakeArray[snakeArray.length-1];
+                        var secNode = snakeArray[snakeArray.length-2];
+                        if (firNode.x==secNode.x && firNode.y<secNode.y) {
+                            snakeArray.push({
+                                x:firNode.x,
+                                y:firNode.y-1
+                            });
+                        }else if (firNode.x==secNode.x && firNode.y>secNode.y) {
+                            snakeArray.push({
+                                x:firNode.x,
+                                y:firNode.y+1
+                            });
+                        }else if (firNode.y==secNode.y && firNode.x>secNode) {
+                            snakeArray.push({
+                                x:firNode.x+1,
+                                y:firNode.y
+                            });
+                        }else if (firNode.y==secNode.y && firNode.x<secNode) {
+                            snakeArray.push({
+                                x:firNode.x-1,
+                                y:firNode.y
+                            });
+                        }
+                    }
+                }
+            }
+
+            if (arrow === "ArrowDown" || arrow === 's') {
+                var snakeArray1 = [];
+                snakeArray.forEach(function(item,index){
+                    if (index === 0) {
+                        if (snakeArray[index].x + 1>9) {
+                            alert("游戏结束");
+                            clearInterval(time);
+                            window.location.reload();
+                        }else{
+                            snakeArray1.push({
+                                x:snakeArray[index].x + 1,
+                                y:snakeArray[index].y
+                            });
+                        }
+                    }else{
+                        snakeArray1.push({
+                            x:snakeArray[index-1].x,
+                            y:snakeArray[index-1].y
+                        });
+                    }
+                });
+                snakeArray = snakeArray1;
+                if (snakeArray[0].x === meatX && snakeArray[0].y === meatY) {
+                    meatX = Math.floor(Math.random()*10);
+                    meatY = Math.floor(Math.random()*10);
+                    var isEmpty = true;
+                    while(true){
+                        snakeArray.forEach(function(item, index) {
+                            if (item.x==meatX&&item.y==meatY) {
+                                isEmpty = false;
+                                meatX = Math.floor(Math.random()*10);
+                                meatY = Math.floor(Math.random()*10);
+                            }
+                        });
+                        if (isEmpty) {
+                            meat = square.children[meatX].children[meatY];
+                            meat.innerHTML = '<div class="meat"></div>';
+                            break;
+                        }else{
+                            isEmpty = true;
+                            continue;
+                        }
+                    }
+                        
+                    if (snakeArray.length==1) {
+                        firNode = snakeArray[0];
+                        snakeArray.push({
+                            x:firNode.x - 1,
+                            y:firNode.y
+                        });
+                    }else if (snakeArray.length==2) {
+                        secNode = snakeArray[1];
+                        snakeArray.push({
+                            x:secNode.x - 1,
+                            y:secNode.y
+                        });
+                    }else {
+                        var firNode = snakeArray[snakeArray.length-1];
+                        var secNode = snakeArray[snakeArray.length-2];
+                        if (firNode.x==secNode.x && firNode.y<secNode.y) {
+                            snakeArray.push({
+                                x:firNode.x,
+                                y:firNode.y-1
+                            });
+                        }else if (firNode.x==secNode.x && firNode.y>secNode.y) {
+                            snakeArray.push({
+                                x:firNode.x,
+                                y:firNode.y+1
+                            });
+                        }else if (firNode.y==secNode.y && firNode.x>secNode.x) {
+                            snakeArray.push({
+                                x:firNode.x+1,
+                                y:firNode.y
+                            });
+                        }else if (firNode.y==secNode.y && firNode.x<secNode.x) {
+                            snakeArray.push({
+                                x:firNode.x-1,
+                                y:firNode.y
+                            });
+                        }
+                    }
+                }
+            }
+
+            if (arrow === "ArrowLeft" || arrow === 'a') {
+                var snakeArray1 = [];
+                snakeArray.forEach(function(item,index){
+                    if (index === 0) {
+                        if (snakeArray[index].y - 1<0) {
+                            alert("游戏结束");
+                            clearInterval(time);
+                            window.location.reload();
+                        }else{
+                            snakeArray1.push({
+                                x:snakeArray[index].x,
+                                y:snakeArray[index].y - 1
+                            });
+                        }
+                    }else{
+                        snakeArray1.push({
+                            x:snakeArray[index-1].x,
+                            y:snakeArray[index-1].y
+                        });
+                    }
+                });
+                snakeArray = snakeArray1;
+                if (snakeArray[0].x === meatX && snakeArray[0].y === meatY) {
+                    meatX = Math.floor(Math.random()*10);
+                    meatY = Math.floor(Math.random()*10);
+                    var isEmpty = true;
+                    while(true){
+                        snakeArray.forEach(function(item, index) {
+                            if (item.x==meatX&&item.y==meatY) {
+                                isEmpty = false;
+                                meatX = Math.floor(Math.random()*10);
+                                meatY = Math.floor(Math.random()*10);
+                            }
+                        });
+                        if (isEmpty) {
+                            meat = square.children[meatX].children[meatY];
+                            meat.innerHTML = '<div class="meat"></div>';
+                            break;
+                        }else{
+                            isEmpty = true;
+                            continue;
+                        }
+                    }
+                        
+                    if (snakeArray.length==1) {
+                        firNode = snakeArray[0];
+                        snakeArray.push({
+                            x:firNode.x,
+                            y:firNode.y + 1
+                        });
+                    }else if (snakeArray.length==2) {
+                        secNode = snakeArray[1];
+                        snakeArray.push({
+                            x:secNode.x,
+                            y:secNode.y + 1
+                        });
+                    }else {
+                        var firNode = snakeArray[snakeArray.length-1];
+                        var secNode = snakeArray[snakeArray.length-2];
+                        if (firNode.x==secNode.x && firNode.y<secNode.y) {
+                            snakeArray.push({
+                                x:firNode.x,
+                                y:firNode.y-1
+                            });
+                        }else if (firNode.x==secNode.x && firNode.y>secNode.y) {
+                            snakeArray.push({
+                                x:firNode.x,
+                                y:firNode.y+1
+                            });
+                        }else if (firNode.y==secNode.y && firNode.x>secNode.x) {
+                            snakeArray.push({
+                                x:firNode.x+1,
+                                y:firNode.y
+                            });
+                        }else if (firNode.y==secNode.y && firNode.x<secNode.x) {
+                            snakeArray.push({
+                                x:firNode.x-1,
+                                y:firNode.y
+                            });
+                        }
+                    }
+                }
+            }
+
+            if (arrow === "ArrowRight" || arrow === 'd') {
+                var snakeArray1 = [];
+                snakeArray.forEach(function(item,index){
+                    if (index === 0) {
+                        if (snakeArray[index].y + 1>9) {
+                            alert("游戏结束");
+                            clearInterval(time);
+                            window.location.reload();
+                        }else{
+                            snakeArray1.push({
+                                x:snakeArray[index].x,
+                                y:snakeArray[index].y + 1
+                            });
+                        }
+                    }else{
+                        snakeArray1.push({
+                            x:snakeArray[index-1].x,
+                            y:snakeArray[index-1].y
+                        });
+                    }
+                });
+                snakeArray = snakeArray1;
+                if (snakeArray[0].x === meatX && snakeArray[0].y === meatY) {
+                    meatX = Math.floor(Math.random()*10);
+                    meatY = Math.floor(Math.random()*10);
+                    var isEmpty = true;
+                    while(true){
+                        snakeArray.forEach(function(item, index) {
+                            if (item.x==meatX&&item.y==meatY) {
+                                isEmpty = false;
+                                meatX = Math.floor(Math.random()*10);
+                                meatY = Math.floor(Math.random()*10);
+                            }
+                        });
+                        if (isEmpty) {
+                            meat = square.children[meatX].children[meatY];
+                            meat.innerHTML = '<div class="meat"></div>';
+                            break;
+                        }else{
+                            isEmpty = true;
+                            continue;
+                        }
+                    }
+                    
+                    if (snakeArray.length==1) {
+                        firNode = snakeArray[0];
+                        snakeArray.push({
+                            x:firNode.x,
+                            y:firNode.y - 1
+                        });
+                    }else if (snakeArray.length==2) {
+                        secNode = snakeArray[1];
+                        snakeArray.push({
+                            x:secNode.x,
+                            y:secNode.y - 1
+                        });
+                    }else{
+                        var firNode = snakeArray[snakeArray.length-1];
+                        var secNode = snakeArray[snakeArray.length-2];
+                        if (firNode.x==secNode.x && firNode.y<secNode.y) {
+                            snakeArray.push({
+                                x:firNode.x,
+                                y:firNode.y-1
+                            });
+                        }else if (firNode.x==secNode.x && firNode.y>secNode.y) {
+                        snakeArray.push({
+                                x:firNode.x,
+                                y:firNode.y+1
+                            });
+                        }else if (firNode.y==secNode.y && firNode.x>secNode.x) {
+                            snakeArray.push({
+                                x:firNode.x+1,
+                                y:firNode.y
+                            });
+                        }else if (firNode.y==secNode.y && firNode.x<secNode.x) {
+                            snakeArray.push({
+                                x:firNode.x-1,
+                                y:firNode.y
+                            });
+                        }
+                    }
+                }
+            }
+            var delhead = square.getElementsByClassName('snake-head');
+            var delbody = square.getElementsByClassName('snake-body');
+            for (var i = delhead.length-1;i>=0;i--){
+                delhead[i].parentElement.removeChild(delhead[i]);
+            }
+            for (var i = delbody.length-1;i>=0;i--){
+                delbody[i].parentElement.removeChild(delbody[i]);
+            }
+            snakeArray.forEach(function(item, index) {
+                var snake = square.children[item.x].children[item.y];
+                if (index === 0) {
+                    snake.innerHTML = '<div class="snake-head"></div>';
+                }else {
+                    snake.innerHTML = '<div class="snake-body"></div>';
+                }
+            });
+        }
+        document.addEventListener("keydown", function(event) {
+            arrow = event.key;
+            move();
+        });
+        var time = setInterval(function(){
+            move();
+        },750);
+	</script>
+</body>
+</html>

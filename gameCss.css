@@ -1,0 +1,37 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.square{
+    width: 500px;
+    height: 500px;
+    margin-left: 50px;
+    background-color: grey;
+}
+.square .line{
+    height: 49px;
+}
+.square .cell{
+    width: 49px;
+    height: 100%;
+    float: left;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.square .meat{
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+    border-radius: 50%;
+    background-color: yellow;
+}
+.square .snake-head{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+.square .snake-body{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}

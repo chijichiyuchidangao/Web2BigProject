@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+			font-family: "微软雅黑"；
+			position:absolute;
+		}
+		input{
+			outline-style: none;
+		}
+		button{
+			outline-style: none;
+		}
+		a{
+		text-decoration: none;
+		color: black;
+		}
+		ul{
+			list-style-type: none;
+		}
+		li{
+			display: inline-block;
+		}
+		/*主体框架*/
+		.top{
+			top: 0px;
+			width: 100%;
+			height: 60px;
+			border-top: 5px solid  black;
+			position: fixed;
+			display: inline-block;
+			z-index: 2;
+			background: white;
+
+		}
+		.logo{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			margin-left: 120px;
+			float: left;
+		}
+		.logo>img{
+			width: 180px;
+			height: 58px;
+			display: inline-block;
+			float: left;
+		}
+		.find{
+			width: 550px;
+			height: 45px;
+			display: inline-block;
+			float: left;
+			margin-left: 140px;
+			margin-top: 8px;
+		}
+		.find input{
+			width: 550px;
+			height: 45px;
+			text-align: center;
+			font-size: 14.78px;
+			color: #d6d6d6;
+			border:2px solid rgb(50,50,50);
+			border-radius: 15px;
+		}
+		.fimg{
+			width: 60px;
+			height: 40px;
+			margin-left: -60px;
+			margin-top: 8px;
+			display: inline-block;
+		}
+		.fimg input{
+			width: 60px;
+			height: 38px;
+			margin-top: 3px;
+			background-image: url(img/search.png);
+			background-color: #ffffff;
+			background-repeat: no-repeat;
+			background-position:center;
+			border: none;
+			border-radius: 10px;
+		}
+		.topright{
+			width: 360px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			margin-right: 30px;
+			margin-top: 5px;
+			float: right;
+		}
+		.tr1{
+			width: 90px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr1:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr2{
+			width: 72px;
+			height: 45px;
+			display: inline-block;
+			line-height: 45px;
+			float: left;
+		}
+		.tr2:hover>a{
+			color: rgb(158,202,61);
+		}
+		.tr1>a>img{
+			margin-top: 10px;
+			height: 25px;
+			width: 25px;
+			float: left;
+		}
+		.backpage{
+			width: 100%;
+			height: 2000px;
+			background: white;
+		}
+		.main{
+			height: 700px;
+			margin: 0px auto;
+		}
+		.k{
+			height: 66px;
+		}
+		#scroll{
+			margin-left: 200px;
+			margin-top: -1px;
+			height: 35px;
+			position: fixed;
+			background: white;
+			z-index: 2;
+		}
+		#pra{
+			color: rgb(194,204,216);
+			width: 1000px;
+			overflow: hidden;
+			float: left;
+			margin-top: 10px;
+		}
+		#mouse{
+			margin-top: -1px;
+			width: 40px;
+			height: 36px;
+			float: left;
+		}
+		#time{
+			float: right;
+			margin-left: 100px;
+			border: 2px solid black;
+			border-radius: 10px;
+			background: white;
+		}
+		#time>img{
+			width: 46px;
+			height: 45px;
+			margin-top: 1px;
+		}
+		#tim{
+			float: right;
+			font-size: 20px;
+			margin-top: 10px;
+		}
+		.left{
+			top: 160px;
+			border-radius: 10px;
+			display: inline-block;
+			position: fixed;
+			z-index: 2;
+		}
+		.nav{
+			height: 55px;
+			width: 150px;
+			margin:5px;
+			text-align: center;
+			line-height: 55px;
+			font-size: 20px;
+			background: rgba(50,50,50,0.6);
+			border-radius: 10px;
+			cursor: pointer;
+			overflow: hidden;
+		}
+		#nav{
+			margin-left: -120px;
+		}
+		#nav2{
+			margin-left: -120px;
+		}
+		#nav3{
+			margin-left: -20px;
+		}
+		#nav4{
+			margin-left: -120px;
+		}
+		#nav5{
+			margin-left: -20px;
+		}
+		#nav6{
+			margin-left: -120px;
+		}
+		.nav>a{
+		color: #ffffff;
+		}
+		#nav1{
+			margin-left: -20px;
+ 			border-radius: 10px;
+ 		}
+ 		#box{
+ 			left: 170px;
+ 			margin-top: -610px;
+ 			overflow: hidden;
+ 			width: 1200px;
+ 			height: 450px;
+ 			margin-left: 20px;
+ 			position: relative;
+ 		}
+ 		#slider{
+ 			position: absolute;
+ 			width: 8400px;
+ 			left: -1200px;
+ 		}
+ 		#slide{
+ 			width: 1200px;
+ 			overflow: hidden;
+ 			float: left;
+ 		}
+ 		#box>span{
+ 			display: block;
+ 			width: 30px;
+ 			height: 50px;
+ 			text-align: center;
+ 			cursor: pointer;
+ 			color: white;
+ 			top: 175px;
+ 			line-height: 50px;
+ 			background: rgb(50,50,50);
+ 			font-size: 30px;
+ 			position: absolute;
+ 			opacity: 0;
+ 		}
+ 		#leftt{
+ 			left: 60px;
+ 		}
+ 		#right{
+ 			right: 60px;
+ 		}
+ 		#rightt{
+ 			position: fixed;
+    	    right: 0px;
+    	    top: 155px;
+    	    width: 50px;
+    	    height: 445px;
+    	    padding-bottom: 10px;
+    	    background-color: rgb(3,11,9);
+    	}
+        #rightt li{
+    	    height: 90px;
+    	    text-align: center;
+    	    width: 50px;
+    	}
+        #rightt li img{
+    	    margin-top: 38px;
+    	    width: 20px;
+    	    height: 20px;
+    	    padding-right: 10px;
+    	}
+        #pi{
+    	    border-bottom: 1px solid #595e5d;
+    	    float: left;
+    	    width: 40px;
+    	    margin-left: 5px;
+    	}
+ 		#cute{
+ 			margin-left: 90px;
+ 			float: right;
+ 			position: fixed;
+ 			margin-top: -30px;
+ 		}
+ 		#cute>img{
+ 			width: 260px;
+ 			height: 160px;
+ 		}
+ 		#skim{
+ 			margin-top: -1300px;
+ 			width: 1300px;
+ 			margin-left: 200px;
+ 		}
+ 		#Computer{
+ 			display: none;
+ 		}
+ 		#computer{
+ 			margin-top: 20px;
+ 			float: left;
+ 			margin-left: 20px;
+ 		}
+ 		#conputer>a>img{
+ 			width: 1200px;
+ 			height: 500px;
+ 		}
+ 		#title2{
+ 			margin-top: 1600px;
+ 		}
+ 		#Car{
+ 			display: none;
+ 		}
+ 		#car{
+ 			margin-top: 20px;
+ 			float: left;
+ 			margin-left: 20px;
+ 		}
+ 		#car>a>img{
+ 			width: 1200px;
+ 			height: 500px;
+ 		}
+ 		#lookmore{
+ 			margin-left: 700px;
+ 			margin-top: 1600px;
+ 			margin-bottom: 5px;
+ 			display: none;
+ 		}
+ 		#lookmore>button{
+ 			border: none;
+ 			font-size: 40px;
+ 			background: white;
+ 		}
+ 		#hidden{
+ 			display: none;
+ 		}
+ 		#makeup{
+ 			margin-top: 20px;
+ 			margin-left: 220px;
+ 		}
+ 		#title3{
+ 			margin-top: 1600px;
+ 			margin-left: 200px;
+ 		}
+ 		#makeup>a>img{
+ 			width: 1200px;
+ 			height: 500px;
+ 		}
+ 		#title4{
+ 			margin-top: 30px;
+ 			margin-left: 200px;
+ 		}
+ 		#game{
+ 			margin-top: 20px;
+ 			margin-left: 220px;
+ 		}
+ 		#game>a>img{
+ 			width: 1200px;
+ 			height: 500px;
+ 		}
+ 		#Tip{
+ 			float: right;
+ 			margin-right: 680px;
+ 			margin-top: 60px;
+ 		}
+ 		#tip{
+ 			color: rgba(50,50,50,0.5);
+ 		}
+ 		#bottom2{
+ 			margin-top: 100px;
+ 			height: 200px;
+ 			background: rgb(242,242,245);
+ 			display: none;
+ 		}
+ 		#botul{
+ 			padding-top: 80px;
+ 			padding-left: 410px;
+ 		}
+ 		#bot{
+ 			float: left;
+ 		}
+ 		#bot>a>li{
+ 			color: rgba(50,50,50,0.6);
+ 		}
+ 		#botp{
+ 			margin-top: 30px;
+ 			padding-left: 600px;
+ 			font-size: 13px;
+ 			color: rgba(50,50,50,0.6);
+ 		}
+ 		#r1{
+ 			float: right;
+ 			margin-right: 50px;
+ 			margin-top: -360px;
+ 			display: none;
+ 		}
+ 		#r1>img{
+ 			z-index: 400;
+ 		}
+ 		#r2{
+ 			float: right;
+ 			margin-right: 48px;
+ 			margin-top: -175px;
+ 			display: none;
+ 		}
+		/*分组实现*/
+		/*首页 by 田文秀*/
+	</style>
+</head>
+<!-- 主题架构 -->
+<body>
+	<div id="topAnchor"></div>
+	<div class="top" id="top" >
+		<div class="logo" id="logo">
+			<a href="web_homework.html"><img src="img/logo3.png" style="height: 60px;"></a>
+		</div>
+		<form>
+			<div class="find" id="find"><input type="text" name="find" value="发现新世界"></div>
+		    <div class="fimg" id="fimg"> <input type="submit" name="fimg" value="&nbsp"></div>
+		<div class="topright" id="toprigh">
+			<div class="tr1" id="tr1"><a href="web_homework.html"><img src="img/home.png">主&nbsp&nbsp页</a></div>
+			<div class="tr1" id="tr1"><a href="#"><img src="img/find.png">发&nbsp&nbsp现</a></div>
+			<div class="tr2" id="tr2"><a href="page/register.html" target="_blank">登&nbsp&nbsp录&nbsp&nbsp&nbsp</a>|</div>
+			<div class="tr1" id="tr1"><a href="#">注&nbsp&nbsp册</a></div>
+		</div>
+		</form>
+	</div>
+
+	<div class="k" id="k"></div>
+	<div class="backpage" id="backpage">
+		<div id="scroll">
+			<img src="img/s1.gif" id="mouse">
+			<div id = "pra">
+				<marquee behavior = "scroll" direction = "left" id ="marquee"></marquee>
+			</div>
+			<div id="time">
+				<img src="img/s2.gif">
+				<div id="tim">
+					<p id="paragraph"></p>
+				</div>
+			</div>
+		</div>
+		<div class="main" id="main">
+			<div class="left" id="left">
+				<div class="nav" id="nav1"><a  href="index.html">首&nbsp&nbsp&nbsp页</a></div>
+				<div class="nav" id="nav2" ><a href="food.html">美&nbsp&nbsp&nbsp食</a></div>
+				<div class="nav" id="nav3"><a href="car.html">汽&nbsp&nbsp&nbsp车</a></div>
+				<div class="nav" id="nav4" ><a href="beauty.html">美&nbsp&nbsp&nbsp妆</a></div>
+				<div class="nav" id="nav5"><a href="game.html">游&nbsp&nbsp&nbsp戏</a></div>
+				<div class="nav" id="nav6"><a href="computer.html">计&nbsp算&nbsp机</a></div>
+			</div>
+		</div>
+		<!-- 轮播图 -->
+		 <div id="box">
+		   	<div id="slider" class="slider">
+		   		<div id="slide"><a href="computer.html"><img src="img/c2.jpg" width="1200px;" height= "450px;"></a></div>
+		   		<div id="slide"><a href="food.html"><img src="img/b1.jpg" width="1200px;" height= "450px;"></a></div>
+		   		<div id="slide"><a href="car.html"><img src="img/c2.png" width="1200px;" height= "450px;"></a></div>
+		   		<div id="slide"><a href="beauty.html"><img src="img/m5.png" width="1200px;" height= "450px;"></a></div>
+		   		<div id="slide"><a href="game.html"><img src="img/g6.jpg" width="1200px;" height= "450px;"></a></div>
+		   		<div id="slide"><a href="computer.html"><img src="img/c2.jpg" height= "450px;" width="1200px;"></a> </div>
+		   		<div id="slide"><a href="food.html"><img src="img/b1.jpg" width="1200px;" height= "450px;"></a> </div>
+		</div>
+		    <span id="leftt"><</span>
+		    <span id="right">></span>
+		</div>
+		<div id="righttt">
+			<ul id="rightt">
+				<div id="pi"><li><img src="img/cart1.png" alt="cart1"/></li></div>
+				<div id="pi">
+					<li id="qq"><img src="img/qq.png" alt="qq"/></li>
+				</div>
+				<div id="pi"><li ><img src="img/zuji.png" alt="zuji"/></li></div>
+				<div id="pi"><li id="erweima"><img src="img/erweima.png" alt="erweima"/></li></div>
+				<div id="pi"><li><a href="#topAnchor" id="gotopa"  ><img src="img/gotop.png" alt="gotop"/><a></li></div>
+			</ul>
+			<div id="r1"><img src="img/r1.png" width="90px;" height="90px;"></div>
+			<div id="r2"><img src="img/r2.png" width="90pa;" height="90px;"></div>
+		</div>
+		<div id="cute">
+			<img src="img/s3.gif">
+		</div>
+	</div>
+	<!-- 浏览区 -->
+	<div id="skim">
+		<div id="Computer">
+		    	<div id="title1"><h1>品牌计算机这里看</h1></div>
+			    <div id="computer"><a href="computer.html"><img src="img/co1.png" width="1200px;" height="500px;"></a></div>
+			    <div id="computer"><a href="computer.html"><img src="img/co2.png" width="1200px;" height="500px;"></a></div>
+			    <div id="computer"><a href="computer.html"><img src="img/co3.png" width="1200px;" height="500px;"></a></div>
+			</div>
+		<div id="Car">
+			<div id="title2"><h1>爱车在这里</h1></div>
+			<div id="car"><a href="car.html"><img src="img/c3.png"></a></div>
+			<div id="car"><a href="car.html"><img src="img/c5.png"></a></div>
+			<div id="car"><a href="car.html"><img src="img/c2.png"></a></div>
+			</div>
+		</div>
+		<div id="lookmore"><button>查看更多>>></button></div>
+		<div id="hidden">
+			<div id="Makeup">
+				<div id="title3"><h1>爱美人士点这里</h1></div>
+			    <div id="makeup"><a href="beauty.html"><img src="img/m7.png"></a></div>
+			    <div id="makeup"><a href="beauty.html"><img src="img/m6.png"></a></div>
+			    <div id="makeup"><a href="beauty.html"><img src="img/m5.png"></a></div>
+			    <div id="makeup"><a href="beauty.html"><img src="img/m8.png"></a></div>
+			</div>
+		    <div id="Game">
+		    	<div id="title4"><h1>游戏多多</h1></div>
+			    <div id="game"><a href="game.html"><img src="img/g1.jpg"></a></div>
+			    <div id="game"><a href="game.html"><img src="img/g2.jpg"></a></div>
+			    <div id="game"><a href="game.html"><img src="img/g6.jpg"></a></div>
+			</div>
+			<div id="Tip"><p id="tip">已经是最底部啦！</p></div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<div id="bottom">
+	<div id="bottom2">
+		<ul id="botul">
+			<div id="bot"><a href="#"><li>share首页&nbsp;&nbsp;|</li></a></div>
+			<div id="bot"><a href="#"><li>&nbsp;&nbsp;share客服&nbsp;&nbsp;|</li></a></div>
+			<div id="bot"><a href="#"><li>&nbsp;&nbsp;意见反馈&nbsp;&nbsp;|</li></a></div>
+			<div id="bot"><a href="#"><li>&nbsp;&nbsp;开放平台&nbsp;&nbsp;|</li></a></div>
+			<div id="bot"><a href="#"><li>&nbsp;&nbsp;投诉处理大厅&nbsp;&nbsp;|</li></a></div>
+			<div id="bot"><a href="#"><li>&nbsp;&nbsp;share网导航&nbsp;&nbsp;|</li></a></div>
+			<div id="bot"><a href="#"><li>&nbsp;&nbsp;DCMA投诉/Report</li></a></div>
+		</ul>
+		<p id="botp">©&nbsp;2019-2020&nbsp;share&nbsp;北京W&B网络技术有限公司</p>
+	</div>
+</div>
+</body>
+<!-- 分组实现 -->
+	<!-- 首页 by 田文秀 -->
+	<script type="text/javascript">
+		// 主体框架
+		function getStyle(obj,style) {  
+	    	if(obj.currentStyle){  
+	    		return obj.currentStyle[style];  
+	    	} 
+	    	else 
+	    	{  
+	    		return getComputedStyle(obj)[style];
+	    	}  
+	    }
+		var input = document.getElementsByTagName('input')[0];
+		var left = document.getElementById('left');
+		var nav2 = document.getElementById('nav2');
+		var nav3 = document.getElementById('nav3');
+		var nav4 = document.getElementById('nav4');
+		var nav5 = document.getElementById('nav5');
+		var nav6 = document.getElementById('nav6');
+		var marquee = document.getElementById('marquee');
+		var paragraph = document.getElementById('paragraph');
+		var now = new Date();
+		var day = 32;
+		var speed0 = -10;
+		var speed1 = 10;
+		var timer;
+		input.onclick = function () {
+			input.value = " ";
+		}
+		input.onblur = function(){
+			input.value = "发现新世界";
+		}
+			function navmove2(){
+				timer = setInterval(function(){
+				var now = parseInt(getStyle(nav2,'margin-left'));
+				if(now <= -20){
+					if(now <= -120){
+						nav2.style.marginLeft= '-20px';
+					}
+					else{
+						nav2.style.marginLeft = now + speed0 + 'px';
+					}
+				}
+			},100)
+	}
+			navmove2();
+			function navmove4(){
+				timer = setInterval(function(){
+				var now = parseInt(getStyle(nav4,'margin-left'));
+				if(now <= -20){
+					if(now <= -120){
+						nav4.style.marginLeft= '-20px';
+					}
+					else{
+						nav4.style.marginLeft = now + speed0 + 'px';
+					}
+				}
+			},100)
+
+			}
+			navmove4();
+			function navmove6(){
+				timer = setInterval(function(){
+				var now = parseInt(getStyle(nav6,'margin-left'));
+				if(now <= -20){
+					if(now <= -120){
+						nav6.style.marginLeft= '-20px';
+					}
+					else{
+						nav6.style.marginLeft = now + speed0 + 'px';
+					}
+				}
+			},100)
+
+			}
+			navmove6();
+			
+			function navmove3(){
+				timer = setInterval(function(){
+				var now = parseInt(getStyle(nav3,'margin-left'));
+				if(now >= -120){
+					if(now >= -20){
+						nav3.style.marginLeft= '-120px';
+					}
+					else{
+						nav3.style.marginLeft = now + speed1 + 'px';
+					}
+				}
+			},100)
+			}
+			navmove3();
+
+			function navmove5(){
+				timer = setInterval(function(){
+				var now = parseInt(getStyle(nav5,'margin-left'));
+				if(now >= -120){
+					if(now >= -20){
+						nav5.style.marginLeft= '-120px';
+					}
+					else{
+						nav5.style.marginLeft = now + speed1 + 'px';
+					}
+				}
+			},100)
+			}
+			navmove5();
+		function getTime(){
+			var date = new Date();
+			var hour = date.getHours();
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+			var hour1 = hour<10?'0' + hour :hour;
+			var minute1 = minute<10?'0' + minute :minute;
+			var second1 = second<10?'0' + second :second;
+			paragraph.innerHTML = hour1 + "：" + minute1 + "："+ second1;
+		}
+		getTime();
+		setInterval(getTime,1000);
+		function scroll(){
+			var date1 = new Date();
+			var year = date1.getFullYear();
+			if(year == 2019){
+				marquee.innerHTML = "距 离 2020 年 仅 剩 " + (day-now.getDate()) + " 天 ! ! ! ";
+			}
+			else{
+				marquee.innerHTML = "今 天 也 是 活 力 满 满 的 一 天 ！ 加 油 ！ 奥 利 给 ！";
+			}
+		}
+		scroll();
+
+		//轮播图
+		function animate(obj,json,callback){
+	clearInterval(obj.timer);
+	obj.timer = setInterval(function(){
+		var isStop = true;
+		for(var attr in json){
+			var now = 0;
+			if(attr == 'opacity'){
+				now = parseInt(getStyle(obj,attr)*100);
+			}else{
+				now = parseInt(getStyle(obj,attr));
+			}
+			var speed = (json[attr] - now) / 8;
+			speed = speed>0?Math.ceil(speed):Math.floor(speed);
+			var cur = now + speed;
+			if(attr == 'opacity'){
+				obj.style[attr] = cur / 100;
+			}else{
+				obj.style[attr] = cur + 'px';
+			}
+			if(json[attr] !== cur){
+				isStop = false;
+			}
+		}
+		if(isStop){
+			clearInterval(obj.timer);
+			callback&&callback();
+		}
+	}, 30)
+}
+var box = document.getElementById('box');
+var slider = document.getElementById('slider');
+	var leftt = document.getElementById('leftt');
+	var right = document.getElementById('right');
+	var p1 = document.getElementById('p1');
+	var index = 1;
+	var isMoving = false;
+	function next(){
+		if(!isMoving){
+			isMoving = true;
+			index++;
+			animate(slider,{left:-1200*index},function(){
+				if(index > 5){
+					slider.style.left = "-1200px";
+					index = 1;
+			}
+			isMoving = false;
+		});
+		}
+	}
+	function previous(){
+		if(!isMoving){
+			index--;
+			animate(slider,{left:-1200*index},function(){
+				if(index === 0){
+					slider.style.left = -1200*5 + "px";
+					index = 5;
+			}
+			isMoving = false;
+		});
+		}
+	}
+	var timer = setInterval(next,3000);
+	box.onmouseover = function(){
+		animate(leftt,{opacity:50})
+	    animate(right,{opacity:50})
+		clearInterval(timer);
+	}
+	box.onmouseout = function(){
+		animate(leftt,{opacity:0})
+		animate(right,{opacity:0})
+		timer = setInterval(next,3000);
+	}
+	right.onclick = next;
+	leftt.onclick = previous;
+	var cute = document.getElementById('cute');
+	function move(){
+		var timer = setInterval(function(){
+			var now = parseInt(getStyle(cute,'margin-left'));
+			var speed = (1200-now)/20;
+			speed>0?Math.ceil(speed):
+			Math.floor(speed);
+			if(now <= 1200){
+				cute.style.marginLeft = now + speed + 'px';
+		}
+		else{
+			clearInterval(timer);
+			cute.style.marginLeft = '1200px';
+		}
+		},6000);
+	}
+	move();
+	var hidden = document.getElementById('hidden');
+	var lookmore = document.getElementById('lookmore');
+	lookmore.onclick = function(){
+		lookmore.style.display = 'none';
+		hidden.style.display = 'block';
+	}
+	var Computer = document.getElementById('Computer');
+	var Car = document.getElementById('Car');
+	var lookmore = document.getElementById('lookmore');
+	var bottom2 = document.getElementById('bottom2');
+	window.onmouseover = function(e){
+		var yl = e.screenY;
+		console.log(yl);
+		if(yl > 300){
+			setTimeout(function(){
+				Computer.style.display = 'block';
+			},100);
+		}
+		if(yl > 400){
+			setTimeout(function(){
+				Car.style.display = 'block';
+			},2000);
+		}
+		if(yl > 500){
+			setTimeout(function(){
+				lookmore.style.display = 'block';
+				bottom2.style.display = 'block';
+			},3000);
+		}
+	}
+	var qq = document.getElementById('qq');
+	var erweima = document.getElementById('erweima');
+	var r1 = document.getElementById('r1');
+	var r2 = document.getElementById('r2');
+	qq.onmouseover = function(){
+		r1.style.display = 'block';
+	}
+	qq.onmouseout = function(){
+		r1.style.display = 'none';
+	}
+	erweima.onmouseover = function(){
+		r2.style.display = 'block';
+	}
+	erweima.onmouseout = function(){
+		r2.style.display = 'none';
+	}
+	</script>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			background-image: url(image/b5.jpg);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+		.box{
+			width: 300px;
+			height: 400px;
+			padding: 0 20px;
+			border: 5px solid rgba(50,50,50,0.8);
+			margin-top: 50px;
+			margin-left: 1000px;
+			border-radius: 15px;
+			background-image: url(image/c2.jpg);
+		}
+		.tit{
+			margin-top: 10px;
+			margin-bottom: 20px;
+			font-size: 20px;
+			text-align: center;
+			color: rgba(250,250,250,0.7);
+		}
+		.brand{
+			color: #1688ea;
+			font-size: 18px;
+			margin-right: 20px;
+		}
+		.inp{
+			width: 100%;
+			height: 40px;
+			text-indent: 8px;
+		}
+		.notice{
+			height: 30px;
+			line-height: 30px;
+			font-size: 12px;
+		}
+
+		.code{
+			width: 60%;
+		}
+		.getCode{
+			width: 35%;
+			height: 44px;
+			float: right;
+			border: none;
+			background-color: #eee;
+		}
+		#check{
+			color: rgba(250,250,250,0.7);
+		}
+		.codeImg{
+			height: 40px;
+			margin-top: 5px;
+		}
+		.btn{
+			background: rgba(50,50,50,0.6);
+			width: 100%;
+			height: 40px;
+			border: none;
+			margin-top: 8px;
+			color: #fff;
+			border-radius: 3px;
+		}
+		#backimg{
+			float: left;
+			margin-left: 0px;
+			margin-top: -620px;
+		}
+		#cute{
+			margin-top: 0px;
+			margin-left: 1100px;
+
+		}
+	</style>
+</head>
+<body background="">
+	<div class="box">
+		<p class="tit">
+			<span>用户登录</span>
+		</p>
+
+		<input class="inp" type="text" placeholder="用户名">
+		<p class="notice"></p>
+
+		<input class="inp" type="password" placeholder="密码">
+		<p class="notice"></p>
+
+		<div>
+			<input class="inp code" type="text" placeholder="验证码">
+			<button class="getCode">获取验证码</button>
+		</div>
+		<div class="codeImg">
+		</div>
+		<p class="notice"></p>
+
+		<input type="checkbox" checked id="check">下次自动登录
+		<button class="btn">登录</button>
+	</div>
+	<!-- <div id="backimg">
+		<img src="image/c1.gif">
+	</div> -->
+	<div id="cute">
+			<img src="image/c2.gif" width="260px;" height="200px;">
+	</div>
+	<script>
+		//用户名
+		var inputs = document.getElementsByTagName("input");
+		var ps = document.getElementsByClassName("notice");
+		inputs[0].setAttribute("onfocus","names()");
+		function names() {
+			ps[0].innerHTML = "请输入4-10用户名号";
+		}
+		//密码
+		inputs[1].setAttribute("onfocus","password()");
+		function password() {
+			ps[1].innerHTML = "请输入6-14位密码" ;
+		}
+		//图片
+		var buttens = document.getElementsByClassName("getCode")[0];
+		var imgg = document.getElementsByClassName("codeImg")[0];
+		buttens.setAttribute("onclick","findOut()");
+		var num
+		function findOut(){
+			num = parseInt(Math.random()*10);
+			imgg.innerHTML = "";
+			var myImage = new Image();
+			var arr = new Array("image/zAZfB.jpg","image/ZEhUN.jpg","image/zFC9H.jpg","image/zhWY9.jpg","image/Zin4c.jpg","image/ZITGj.jpg","image/zJ6iV.jpg","image/zjsKP.jpg","image/ZKc9S.jpg","image/zKDXU.jpg");
+			var str = arr[num];
+			myImage.src=arr[num];
+			imgg.appendChild(myImage);
+		}
+		//消失
+		inputs[0].setAttribute("onblur","dele0()");
+		function dele0(){
+			ps[0].innerHTML = "";
+		}
+		inputs[1].setAttribute("onblur","dele1()");
+		function dele1(){
+			ps[1].innerHTML = "";
+		}
+		//登录
+		var lan = document.getElementsByClassName("btn")[0];
+		lan.setAttribute("onclick","landing()");
+		function landing(){
+			var brr = new Array("zAZfB","ZEhUN","zFC9H","zhWY9","Zin4c","ZITGj","zJ6iV","zjsKP","ZKc9S","zKDXU");
+			var i = 0;
+			var names = document.getElementsByTagName("input")[0].value;
+			var password = document.getElementsByTagName("input")[1].value;
+			var codes = document.getElementsByClassName("inp code")[0].value;
+			var code = document.getElementsByClassName("notice")[2];
+			if (names.length>10||names.length<4) {
+				ps[0].innerHTML = "用户名位数不对";
+				i = 1;
+			}
+			if(password.length>14||password.length<6){
+				ps[1].innerHTML = "密码位数不对";
+				i = 1;
+			}
+			if(codes!=brr[num]){
+				code.innerHTML = "验证码错误";
+				i = 1;
+			}
+			if (i==0) {
+				alert("登录成功！");
+			}
+		}
+
+		function getStyle(obj,style) {  
+	    	if(obj.currentStyle){  
+	    		return obj.currentStyle[style];  
+	    	} 
+	    	else 
+	    	{  
+	    		return getComputedStyle(obj)[style];
+	    	}  
+	    }
+
+		var cute = document.getElementById('cute');
+		function move(){
+		var timer = setInterval(function(){
+			var now = parseInt(getStyle(cute,'margin-left'));
+			// var speed = (1200-now)/25;
+			// speed>0?Math.ceil(speed):
+			// Math.floor(speed);
+			var speed = 10;
+			if(now <= 1100){
+				if(now <= 100){
+					cute.style.marginLeft = '1100px';
+				}
+				else{
+					cute.style.marginLeft = now - speed + 'px';
+				}
+		}
+		},100);
+	}
+	 move();
+	</script>
+</body>
+</html>

@@ -184,7 +184,7 @@
 			text-align: center;
 			line-height: 55px;
 			font-size: 20px;
-			background: rgba(50,50,50,0.6);
+			background: rgba(50,50,50,0.8);
 			border-radius: 10px;
 			cursor: pointer;
 			overflow: hidden;
@@ -559,7 +559,6 @@
 		var day = 32;
 		var speed0 = -10;
 		var speed1 = 10;
-		var timer;
 		input.onclick = function () {
 			input.value = " ";
 		}
@@ -567,7 +566,7 @@
 			input.value = "发现新世界";
 		}
 			function navmove2(){
-				timer = setInterval(function(){
+				var timer = setInterval(function(){
 				var now = parseInt(getStyle(nav2,'margin-left'));
 				if(now <= -20){
 					if(now <= -120){
@@ -578,10 +577,17 @@
 					}
 				}
 			},100)
-	}
+				nav2.onmouseover = function(){
+					nav2.style.marginLeft = '-20px';
+					clearInterval(timer);
+				}
+			}
+			nav2.onmouseout = function(){
+				navmove2();
+			}
 			navmove2();
 			function navmove4(){
-				timer = setInterval(function(){
+				var timer = setInterval(function(){
 				var now = parseInt(getStyle(nav4,'margin-left'));
 				if(now <= -20){
 					if(now <= -120){
@@ -592,11 +598,17 @@
 					}
 				}
 			},100)
-
+				nav4.onmouseover = function(){
+					nav4.style.marginLeft = '-20px';
+					clearInterval(timer);
+				}
 			}
 			navmove4();
+			nav4.onmouseout = function(){
+				navmove4();
+			}
 			function navmove6(){
-				timer = setInterval(function(){
+				var timer = setInterval(function(){
 				var now = parseInt(getStyle(nav6,'margin-left'));
 				if(now <= -20){
 					if(now <= -120){
@@ -607,12 +619,18 @@
 					}
 				}
 			},100)
-
+				nav6.onmouseover = function(){
+					nav6.style.marginLeft = '-20px';
+					clearInterval(timer);
+				}
 			}
 			navmove6();
+			nav6.onmouseout = function(){
+				navmove6();
+			}
 			
 			function navmove3(){
-				timer = setInterval(function(){
+				var timer = setInterval(function(){
 				var now = parseInt(getStyle(nav3,'margin-left'));
 				if(now >= -120){
 					if(now >= -20){
@@ -623,11 +641,19 @@
 					}
 				}
 			},100)
+				nav3.onmouseover = function(){
+					clearInterval(timer);
+					nav3.style.marginLeft = '-20px';
+					clearInterval(timer);
+				}
 			}
 			navmove3();
+			nav3.onmouseout = function(){
+				navmove3();
+			}
 
 			function navmove5(){
-				timer = setInterval(function(){
+				var timer = setInterval(function(){
 				var now = parseInt(getStyle(nav5,'margin-left'));
 				if(now >= -120){
 					if(now >= -20){
@@ -638,8 +664,15 @@
 					}
 				}
 			},100)
+				nav5.onmouseover = function(){
+					nav5.style.marginLeft = '-20px';
+					clearInterval(timer);
+				}
 			}
 			navmove5();
+			nav5.onmouseout = function(){
+				navmove5();
+			}
 		function getTime(){
 			var date = new Date();
 			var hour = date.getHours();

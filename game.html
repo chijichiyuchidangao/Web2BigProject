@@ -186,7 +186,7 @@
 			margin-left: -120px;
 		}
 		#nav5{
-			margin-left: -120px;
+			margin-left: -20px;
 		}
 		#nav6{
 			margin-left: -120px;
@@ -195,7 +195,7 @@
 		color: #ffffff;
 		}
 		#nav1{
-			margin-left: -20px;
+			margin-left: -120px;
  			border-radius: 10px;
  		}
 		/*分组实现*/
@@ -424,11 +424,11 @@
 		nav4.onmouseover = function(){
 			nav4.style.marginLeft = '-20px';
 		}
-		nav5.onmouseout = function(){
-			nav5.style.marginLeft = '-120px';
+		nav1.onmouseout = function(){
+			nav1.style.marginLeft = '-120px';
 		}
-		nav5.onmouseover = function(){
-			nav5.style.marginLeft = '-20px';
+		nav1.onmouseover = function(){
+			nav1.style.marginLeft = '-20px';
 		}
 		nav6.onmouseout = function(){
 			nav6.style.marginLeft= '-120px';
@@ -819,6 +819,13 @@
             }
             for (var i = delbody.length-1;i>=0;i--){
                 delbody[i].parentElement.removeChild(delbody[i]);
+            }
+            for (i=1;i<snakeArray.length;i++){
+            	if (snakeArray[0].x==snakeArray[i].x&&snakeArray[0].y==snakeArray[i].y) {
+            		alert("游戏结束");
+                    clearInterval(time);
+                    window.location.reload();
+            	}
             }
             snakeArray.forEach(function(item, index) {
                 var snake = square.children[item.x].children[item.y];

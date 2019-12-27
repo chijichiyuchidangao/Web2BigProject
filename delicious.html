@@ -177,6 +177,9 @@
 		#nav{
 			margin-left: -120px;
 		}
+		#nav1{
+			margin-left: -120px;
+ 		}
 		#nav2{
 			margin-left: -20px;
  			border-radius: 10px;
@@ -196,9 +199,6 @@
 		.nav>a{
 		color: #ffffff;
 		}
-		#nav1{
-			margin-left: -120px;
- 		}
 		/*分组实现*/
 		/*首页 by 田文秀*/
 
@@ -474,6 +474,7 @@
 	    }
 		var input = document.getElementsByTagName('input')[0];
 		var left = document.getElementById('left');
+		var nav1 = document.getElementById('nav1');
 		var nav2 = document.getElementById('nav2');
 		var nav3 = document.getElementById('nav3');
 		var nav4 = document.getElementById('nav4');
@@ -488,6 +489,12 @@
 		}
 		input.onblur = function(){
 			input.value = "发现新世界";
+		}
+		nav1.onmouseout = function(){
+			nav1.style.marginLeft= '-120px';
+		}
+		nav1.onmouseover = function(){
+			nav1.style.marginLeft = '-20px';
 		}
 		nav2.onmouseout = function(){
 			nav2.style.marginLeft= '-120px';
@@ -519,6 +526,7 @@
 		nav6.onmouseover = function(){
 			nav6.style.marginLeft = '-20px';
 		}
+
 		function getTime(){
 			var date = new Date();
 			var hour = date.getHours();
